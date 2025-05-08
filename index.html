@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITeC 2025 - Agricultural Innovation Technology Competition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F25922',
+                        secondary: '#F22727',
+                        accent1: '#90BF2A',
+                        accent2: '#509625',
+                        accent3: '#FEBF0F',
+                        accent4: '#FC9804',
+                        accent5: '#44AED5',
+                        accent6: '#0C339A',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .bg-primary {
+            background-color: #F25922;
+        }
+        
+        .bg-secondary {
+            background-color: #F22727;
+        }
+        
+        .bg-accent1 {
+            background-color: #90BF2A;
+        }
+        
+        .bg-accent2 {
+            background-color: #509625;
+        }
+        
+        .bg-accent3 {
+            background-color: #FEBF0F;
+        }
+
+        .logo-hero {
+            height: 450px;
+            width: auto;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #F25922 0%, #F22727 100%);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: 100%;
+            width: 2px;
+            background: #509625;
+        }
+        
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="h-14 w-auto" src="./assets/logo-navbar.png" alt="AITeC Logo">
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#welcome" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Sambutan</a>
+                    <a href="#timeline" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Timeline</a>
+                    <a href="#categories" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Kategori</a>
+                    <a href="#gallery" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Gallery</a>
+                    <a href="#" class="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition">Daftar Sekarang</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-900 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Home</a>
+                <a href="#welcome" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Sambutan</a>
+                <a href="#timeline" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Timeline</a>
+                <a href="#categories" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Kategori</a>
+                <a href="#gallery" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Gallery</a>
+                <a href="#" class="block w-full text-center bg-primary text-white px-6 py-2 rounded-full text-base font-medium hover:bg-opacity-90 transition mt-2">Daftar Sekarang</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-5 items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        AITeC VII<span class="text-accent3 ml-2">2025</span>
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 opacity-90">
+                        Agricultural Innovation Technology Competition (AITeC) merupakan kompetisi tahunan di bidang pertanian yang diikuti oleh Politeknik seluruh Indonesia. 
+                        Wadah untuk mengeksplorasi inovasi dan teknologi di bidang pertanian.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#" class="bg-white text-primary px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition text-center">
+                            Daftar Sekarang
+                        </a>
+                        <a href="#categories" class="border-2 border-white text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:bg-opacity-10 transition text-center">
+                            Lihat Kategori
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-50 h-auto flex justify-center">
+                    <img src="./assets/logo-white.png" alt="AITeC Hero" class="rounded-lg img-fluid logo-hero animate-float">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="welcome" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Sambutan Ketua Pelaksana</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                <div class="md:w-1/3 p-6">
+                    <img src="https://via.placeholder.com/400x500?text=Ketua+Pelaksana" alt="Ketua Pelaksana" class="rounded-lg w-full h-auto shadow-md">
+                </div>
+                <div class="md:w-2/3 p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Dr. Ir. Budi Santoso, M.Sc.</h3>
+                    <p class="text-gray-700 mb-6">
+                        "Selamat datang di Agricultural Innovation Technology Competition (AITeC) 2025. Kompetisi ini merupakan wadah bagi mahasiswa politeknik seluruh Indonesia untuk menunjukkan inovasi dan kreativitas di bidang pertanian. Tahun ini kami menghadirkan 16 cabang kompetisi yang lebih beragam dan menarik."
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        "Kami berharap AITeC 2025 dapat menjadi ajang untuk saling berbagi pengetahuan, pengalaman, dan membangun jejaring di antara para peserta. Mari bersama-sama kita wujudkan pertanian Indonesia yang lebih maju dan berkelanjutan melalui inovasi teknologi."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="mr-4">
+                            <div class="text-4xl font-bold text-primary">16</div>
+                            <div class="text-gray-600">Cabang Lomba</div>
+                        </div>
+                        <div class="mr-4">
+                            <div class="text-4xl font-bold text-accent2">50+</div>
+                            <div class="text-gray-600">Politeknik</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-accent1">1000+</div>
+                            <div class="text-gray-600">Peserta</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Timeline Kompetisi</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="relative">
+                <div class="space-y-8">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent1 border-4 border-white shadow-md"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-gray-900">Pendaftaran Peserta</h3>
+                                <span class="bg-accent1 bg-opacity-20 text-accent1 px-3 py-1 rounded-full text-sm font-medium">1 Maret - 30 April 2025</span>
+                            </div>
+                            <p class="text-gray-700">
+                                Pendaftaran dibuka untuk seluruh politeknik di Indonesia. Setiap politeknik dapat mengirimkan maksimal 3 tim per cabang lomba.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent2 border-4 border-white shadow-md"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-gray-900">Seleksi Administrasi</h3>
+                                <span class="bg-accent2 bg-opacity-20 text-accent2 px-3 py-1 rounded-full text-sm font-medium">1 - 10 Mei 2025</span>
+                            </div>
+                            <p class="text-gray-700">
+                                Panitia akan melakukan verifikasi dokumen pendaftaran dan persyaratan administrasi peserta.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent3 border-4 border-white shadow-md"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-gray-900">Pengumuman Lolos Seleksi</h3>
+                                <span class="bg-accent3 bg-opacity-20 text-accent3 px-3 py-1 rounded-full text-sm font-medium">15 Mei 2025</span>
+                            </div>
+                            <p class="text-gray-700">
+                                Pengumuman peserta yang lolos seleksi administrasi dan berhak mengikuti kompetisi.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent4 border-4 border-white shadow-md"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-gray-900">Technical Meeting</h3>
+                                <span class="bg-accent4 bg-opacity-20 text-accent4 px-3 py-1 rounded-full text-sm font-medium">20 Mei 2025</span>
+                            </div>
+                            <p class="text-gray-700">
+                                Penjelasan teknis pelaksanaan kompetisi untuk semua cabang lomba melalui Zoom Meeting.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 5 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent5 border-4 border-white shadow-md"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-gray-900">Pelaksanaan Kompetisi</h3>
+                                <span class="bg-accent5 bg-opacity-20 text-accent5 px-3 py-1 rounded-full text-sm font-medium">25 - 28 Mei 2025</span>
+                            </div>
+                            <p class="text-gray-700">
+                                Pelaksanaan kompetisi untuk semua cabang lomba di lokasi yang telah ditentukan.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 6 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-accent6 border-4 border-white shadow-md"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold text-gray-900">Pengumuman Pemenang</h3>
+                                <span class="bg-accent6 bg-opacity-20 text-accent6 px-3 py-1 rounded-full text-sm font-medium">30 Mei 2025</span>
+                            </div>
+                            <p class="text-gray-700">
+                                Pengumuman pemenang untuk semua cabang lomba dan penyerahan hadiah.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Kategori Kompetisi</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <!-- Tabs Navigation -->
+            <div class="flex flex-wrap justify-center mb-12">
+                <button class="tab-button active px-6 py-2 mx-2 mb-2 rounded-full font-medium bg-primary text-white" data-tab="innovation">
+                    Inovasi Teknologi
+                </button>
+                <button class="tab-button px-6 py-2 mx-2 mb-2 rounded-full font-medium bg-gray-200 text-gray-800 hover:bg-gray-300" data-tab="vocational">
+                    Kontes Vokasi
+                </button>
+                <button class="tab-button px-6 py-2 mx-2 mb-2 rounded-full font-medium bg-gray-200 text-gray-800 hover:bg-gray-300" data-tab="photography">
+                    Fotografi
+                </button>
+            </div>
+            
+            <!-- Tab Content -->
+            <div class="tab-content active" id="innovation">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">KOMPETISI INOVASI TEKNOLOGI BIDANG PERTANIAN</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Sub-category 1 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-accent1 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-robot text-accent1 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Smart and Precision Farming</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Kompetisi inovasi teknologi untuk meningkatkan efisiensi dan produktivitas pertanian melalui sistem pertanian cerdas dan presisi.
+                        </p>
+                        <div class="flex flex-wrap">
+                            <span class="bg-accent1 bg-opacity-20 text-accent1 px-3 py-1 rounded-full text-xs font-medium mr-2 mb-2">IoT</span>
+                            <span class="bg-accent1 bg-opacity-20 text-accent1 px-3 py-1 rounded-full text-xs font-medium mr-2 mb-2">Drone</span>
+                            <span class="bg-accent1 bg-opacity-20 text-accent1 px-3 py-1 rounded-full text-xs font-medium mr-2 mb-2">AI</span>
+                            <span class="bg-accent1 bg-opacity-20 text-accent1 px-3 py-1 rounded-full text-xs font-medium mr-2 mb-2">Sensor</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Sub-category 2 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-accent2 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-tools text-accent2 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Teknologi Tepat Guna</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Kompetisi inovasi alat dan mesin pertanian yang sederhana, murah, dan mudah diaplikasikan untuk meningkatkan produktivitas petani.
+                        </p>
+                        <div class="flex flex-wrap">
+                            <span class="bg-accent2 bg-opacity-20 text-accent2 px-3 py-1 rounded-full text-xs font-medium mr-2 mb-2">Alat Pertanian</span>
+                            <span class="bg-accent2 bg-opacity-20 text-accent2 px-3 py-1 rounded-full text-xs font-medium mr-2 mb-2">Mesin</span>
+                            <span class="bg-accent2 bg-opacity-20 text-accent2 px-3 py-1 rounded-full text-xs font-medium mr-2 mb-2">Inovasi</span>
+                            <span class="bg-accent2 bg-opacity-20 text-accent2 px-3 py-1 rounded-full text-xs font-medium mr-2 mb-2">Praktis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content hidden" id="vocational">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">KONTES VOKASI BIDANG PERTANIAN</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Vocational 1 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-accent3 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-tree text-accent3 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Teknik Okulasi Tanaman</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Lomba keterampilan dalam melakukan okulasi tanaman dengan teknik yang benar untuk menghasilkan bibit unggul.
+                        </p>
+                    </div>
+                    
+                    <!-- Vocational 2 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-accent4 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-coffee text-accent4 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Sortasi Biji Kopi</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Lomba keterampilan dalam menyortir biji kopi berdasarkan kualitas untuk mendapatkan produk terbaik.
+                        </p>
+                    </div>
+                    
+                    <!-- Vocational 3 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-accent5 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-paw text-accent5 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Handling Ternak</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Lomba keterampilan dalam menangani hewan ternak dengan teknik yang benar untuk meminimalkan stres pada hewan.
+                        </p>
+                    </div>
+                    
+                    <!-- Vocational 4 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-accent6 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-drumstick-bite text-accent6 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Teknik Proses Karkas Ayam</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Lomba keterampilan dalam memproses karkas ayam dengan teknik yang higienis dan efisien.
+                        </p>
+                    </div>
+                    
+                    <!-- Vocational 5 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-syringe text-primary text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Teknik Pengambilan Sampel Darah Ayam</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Lomba keterampilan dalam mengambil sampel darah ayam untuk keperluan diagnosa penyakit dengan teknik yang benar.
+                        </p>
+                    </div>
+                    
+                    <!-- Vocational 6 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-secondary bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-bread-slice text-secondary text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Formulasi Pakan Ternak</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Lomba keterampilan dalam meracik pakan ternak dengan formulasi yang tepat untuk kebutuhan nutrisi hewan.
+                        </p>
+                    </div>
+                    
+                    <!-- Vocational 7 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-accent1 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-fish text-accent1 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Formulasi Pakan Ikan</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Lomba keterampilan dalam meracik pakan ikan dengan formulasi yang tepat untuk pertumbuhan optimal.
+                        </p>
+                    </div>
+                    
+                    <!-- Vocational 8 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-accent2 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-egg text-accent2 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Packing Benih Ikan</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Lomba keterampilan dalam mengemas benih ikan untuk transportasi dengan tingkat hidup yang tinggi.
+                        </p>
+                    </div>
+                    
+                    <!-- Vocational 9 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-accent3 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-cut text-accent3 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Teknik Proses Fillet Ikan</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Lomba keterampilan dalam memfillet ikan dengan teknik yang benar untuk mendapatkan hasil maksimal.
+                        </p>
+                    </div>
+                    
+                    <!-- Vocational 10 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-accent4 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-utensils text-accent4 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Teknik Pembuatan Bakso Ikan</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Lomba keterampilan dalam membuat bakso ikan dengan kualitas terbaik dari segi tekstur dan rasa.
+                        </p>
+                    </div>
+                    
+                    <!-- Vocational 11 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-accent5 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marked-alt text-accent5 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Survey Pemetaan Lahan</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Lomba keterampilan dalam melakukan survey dan pemetaan lahan untuk keperluan pertanian.
+                        </p>
+                    </div>
+                    
+                    <!-- Vocational 12 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-accent6 bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-ruler-combined text-accent6 text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Desain Alat dan Mesin Pertanian dengan AutoCAD</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Lomba keterampilan dalam mendesain alat dan mesin pertanian menggunakan software AutoCAD.
+                        </p>
+                    </div>
+                    
+                    <!-- Vocational 13 -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition category-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-chalkboard-teacher text-primary text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Penyuluhan Pertanian</h4>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Lomba keterampilan dalam menyampaikan materi penyuluhan pertanian kepada masyarakat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content hidden" id="photography">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">EKSIBISI FOTOGRAFI / PHOTOGRAPHY EXHIBITION</h3>
+                
+                <div class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-lg transition category-card max-w-2xl mx-auto">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-accent3 bg-opacity-20 flex items-center justify-center mr-4">
+                            <i class="fas fa-camera-retro text-accent3 text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-900">Fotografi Pertanian</h4>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        Kompetisi fotografi yang mengangkat tema inovasi dan keindahan dunia pertanian. Peserta dapat mengirimkan karya fotografi yang menggambarkan berbagai aspek pertanian modern maupun tradisional.
+                    </p>
+                    <div class="mb-6">
+                        <h5 class="font-bold text-gray-900 mb-2">Kriteria Penilaian:</h5>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Kesesuaian dengan tema pertanian</li>
+                            <li>Kreativitas dan originalitas karya</li>
+                            <li>Komposisi dan estetika foto</li>
+                            <li>Teknik pengambilan gambar</li>
+                            <li>Pesan yang disampaikan melalui foto</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-gray-900 mb-2">Ketentuan:</h5>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Foto harus asli karya peserta</li>
+                            <li>Boleh menggunakan editing minimal (hanya penyesuaian warna, kontras, dll)</li>
+                            <li>Resolusi minimal 3000x2000 pixel</li>
+                            <li>Setiap peserta boleh mengirim maksimal 3 karya</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Gallery AITeC</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition">
+                    <img src="https://via.placeholder.com/400x300?text=AITeC+1" alt="Gallery 1" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-white font-medium">Pembukaan AITeC 2024</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition">
+                    <img src="https://via.placeholder.com/400x300?text=AITeC+2" alt="Gallery 2" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-white font-medium">Peserta Smart Farming</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition">
+                    <img src="https://via.placeholder.com/400x300?text=AITeC+3" alt="Gallery 3" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-white font-medium">Kontes Vokasi</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition">
+                    <img src="https://via.placeholder.com/400x300?text=AITeC+4" alt="Gallery 4" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-white font-medium">Penyerahan Hadiah</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition">
+                    <img src="https://via.placeholder.com/400x300?text=AITeC+5" alt="Gallery 5" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-white font-medium">Pameran Inovasi</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition">
+                    <img src="https://via.placeholder.com/400x300?text=AITeC+6" alt="Gallery 6" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-white font-medium">Workshop</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 7 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition">
+                    <img src="https://via.placeholder.com/400x300?text=AITeC+7" alt="Gallery 7" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-white font-medium">Foto Bersama</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 8 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition">
+                    <img src="https://via.placeholder.com/400x300?text=AITeC+8" alt="Gallery 8" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-white font-medium">Penutupan</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition">
+                    Lihat Lebih Banyak Foto
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <img src="./assets/logo-footer.png" alt="AITeC Logo" class="h-12 mb-4">
+                    <p class="text-gray-400 mb-4">
+                        Agricultural Innovation Technology Competition (AITeC) merupakan kompetisi tahunan di bidang pertanian yang diikuti oleh Politeknik seluruh Indonesia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#welcome" class="text-gray-400 hover:text-white transition">Sambutan</a></li>
+                        <li><a href="#timeline" class="text-gray-400 hover:text-white transition">Timeline</a></li>
+                        <li><a href="#categories" class="text-gray-400 hover:text-white transition">Kategori</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Kontak Kami</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>Jl. Pertanian No. 123, Kota Malang, Jawa Timur</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                            <span>+62 123 4567 890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>info@aitec2025.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    &copy; 2025 AITeC Politeknik Negeri Jember. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.classList.add('bg-gray-200', 'text-gray-800');
+                    btn.classList.remove('bg-primary', 'text-white');
+                });
+                
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                    content.classList.remove('active');
+                });
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                button.classList.remove('bg-gray-200', 'text-gray-800');
+                button.classList.add('bg-primary', 'text-white');
+                
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.remove('hidden');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const offset = 80; // Adjust for fixed header
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
