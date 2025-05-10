@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifikasi | AITeC 2025 Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F25922',
+                        secondary: '#F22727',
+                        accent1: '#90BF2A',
+                        accent2: '#509625',
+                        accent3: '#FEBF0F',
+                        accent4: '#FC9804',
+                        accent5: '#44AED5',
+                        accent6: '#0C339A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50" id="sidebar">
+        <div class="flex items-center justify-center h-16 bg-primary">
+            <div class="flex items-center space-x-2">
+                <img src="../assets/logo/logotype-h-white.png" class="h-10 md:h-11 w-auto" alt="AITeC Logo">
+            </div>
+        </div>
+        <div class="overflow-y-auto h-full py-4">
+            <div class="px-4 py-2">
+                <div class="flex items-center space-x-3 p-3 bg-accent1 bg-opacity-10 rounded-lg">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="w-10 h-10 rounded-full">
+                    <div>
+                        <p class="font-medium">Admin User</p>
+                        <p class="text-xs text-gray-500">Super Admin</p>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="mt-6">
+                <div class="px-4">
+                    <p class="text-xs uppercase text-gray-500 font-medium mb-4">Main Menu</p>
+                </div>
+                
+                <a href="dashboard.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-tachometer-alt mr-3"></i>
+                    <span>Dashboard</span>
+                </a>
+                
+                <a href="participants.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-users mr-3"></i>
+                    <span>Data Peserta</span>
+                </a>
+                
+                <div class="group">
+                    <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-trophy mr-3"></i>
+                            <span>Daftar Kompetisi</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                    </button>
+                    <div class="hidden group-hover:block hover:block">
+                        <a href="competitions/" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                            <span>Inovasi Teknologi</span>
+                        </a>
+                        <a href="competitions/" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                            <span>Kontes Vokasi</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="group">
+                    <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-photo-video mr-3"></i>
+                            <span>Media</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                    </button>
+                    <div class="hidden group-hover:block hover:block">
+                        <a href="media/news.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                            <span>News</span>
+                        </a>
+                        <a href="media/gallery.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                            <span>Gallery</span>
+                        </a>
+                        <a href="media/greetings.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                            <span>Sambutan</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="universities.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-university mr-3"></i>
+                    <span>Data Perguruan Tinggi</span>
+                </a>
+                
+                <a href="committees.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-user-tie mr-3"></i>
+                    <span>Data Panitia</span>
+                </a>
+                
+                <a href="verification.html" class="flex items-center px-6 py-3 text-primary bg-primary bg-opacity-10 border-r-4 border-primary">
+                    <i class="fas fa-check-circle mr-3"></i>
+                    <span>Verifikasi</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="md:ml-64 transition-all duration-300">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-6 py-3">
+                <div class="flex items-center">
+                    <button id="sidebarToggle" class="md:hidden text-gray-600 focus:outline-none mr-4">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-semibold text-gray-800">Verifikasi</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button id="userMenuButton" class="flex items-center focus:outline-none">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="w-8 h-8 rounded-full">
+                            <span class="ml-2 text-gray-700 hidden md:inline">Admin</span>
+                            <i class="fas fa-chevron-down ml-1 text-xs text-gray-600"></i>
+                        </button>
+                        <div id="userMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                            <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-6">
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="border-b border-gray-200">
+                    <nav class="flex -mb-px">
+                        <button id="pendingTab" class="py-4 px-6 text-center border-b-2 font-medium text-sm border-primary text-primary">
+                            <i class="fas fa-clock mr-2"></i> Menunggu (42)
+                        </button>
+                        <button id="approvedTab" class="py-4 px-6 text-center border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                            <i class="fas fa-check-circle mr-2"></i> Disetujui (356)
+                        </button>
+                        <button id="rejectedTab" class="py-4 px-6 text-center border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                            <i class="fas fa-times-circle mr-2"></i> Ditolak (18)
+                        </button>
+                    </nav>
+                </div>
+                
+                <!-- Pending Tab Content -->
+                <div id="pendingContent" class="p-6">
+                    <div class="mb-4 flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="mb-2 md:mb-0">
+                            <h3 class="text-lg font-medium text-gray-900">Submissions Pending Verification</h3>
+                            <p class="text-sm text-gray-500">42 submissions need your verification</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="relative">
+                                <input type="text" placeholder="Cari..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                            </div>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex items-center">
+                                <i class="fas fa-filter mr-2"></i> Filter
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Perguruan Tinggi</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Budi Santoso</div>
+                                        <div class="text-sm text-gray-500">Inovasi Teknologi - Proposal</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Bandung</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent1 bg-opacity-20 text-accent1">Inovasi Teknologi</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">12 Mei 2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
+                                        <button class="text-green-500 hover:text-opacity-80 mr-3"><i class="fas fa-check"></i></button>
+                                        <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-times"></i></button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Ani Lestari</div>
+                                        <div class="text-sm text-gray-500">Kontes Vokasi - Daring</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Jember</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent5 bg-opacity-20 text-accent5">Kontes Vokasi</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">11 Mei 2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
+                                        <button class="text-green-500 hover:text-opacity-80 mr-3"><i class="fas fa-check"></i></button>
+                                        <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-times"></i></button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Rudi Hermawan</div>
+                                        <div class="text-sm text-gray-500">Inovasi Teknologi - Video</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Malang</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent1 bg-opacity-20 text-accent1">Inovasi Teknologi</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10 Mei 2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
+                                        <button class="text-green-500 hover:text-opacity-80 mr-3"><i class="fas fa-check"></i></button>
+                                        <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-times"></i></button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Siti Rahma</div>
+                                        <div class="text-sm text-gray-500">Kontes Vokasi - Luring</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Jakarta</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent3 bg-opacity-20 text-accent3">Kontes Vokasi</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">9 Mei 2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
+                                        <button class="text-green-500 hover:text-opacity-80 mr-3"><i class="fas fa-check"></i></button>
+                                        <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-times"></i></button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Ahmad Fauzi</div>
+                                        <div class="text-sm text-gray-500">Inovasi Teknologi - Proposal</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Semarang</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent1 bg-opacity-20 text-accent1">Inovasi Teknologi</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8 Mei 2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
+                                        <button class="text-green-500 hover:text-opacity-80 mr-3"><i class="fas fa-check"></i></button>
+                                        <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-times"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="px-6 py-4 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between">
+                        <div class="text-sm text-gray-500 mb-2 md:mb-0">
+                            Menampilkan <span class="font-medium">1</span> sampai <span class="font-medium">5</span> dari <span class="font-medium">42</span> yang menunggu
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                Sebelumnya
+                            </button>
+                            <button class="px-3 py-1 border border-primary bg-primary text-white rounded-md text-sm font-medium">
+                                1
+                            </button>
+                            <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                2
+                            </button>
+                            <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                3
+                            </button>
+                            <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                Selanjutnya
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Approved Tab Content -->
+                <div id="approvedContent" class="p-6 hidden">
+                    <div class="mb-4 flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="mb-2 md:mb-0">
+                            <h3 class="text-lg font-medium text-gray-900">Approved Submissions</h3>
+                            <p class="text-sm text-gray-500">356 submissions have been approved</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="relative">
+                                <input type="text" placeholder="Cari..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                            </div>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex items-center">
+                                <i class="fas fa-filter mr-2"></i> Filter
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Perguruan Tinggi</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Dewi Sartika</div>
+                                        <div class="text-sm text-gray-500">Inovasi Teknologi - Proposal</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Jember</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent1 bg-opacity-20 text-accent1">Inovasi Teknologi</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">7 Mei 2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
+                                        <button class="text-yellow-500 hover:text-opacity-80"><i class="fas fa-undo"></i></button>
+                                    </td>
+                                </tr>
+                                <!-- More approved rows... -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Rejected Tab Content -->
+                <div id="rejectedContent" class="p-6 hidden">
+                    <div class="mb-4 flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="mb-2 md:mb-0">
+                            <h3 class="text-lg font-medium text-gray-900">Rejected Submissions</h3>
+                            <p class="text-sm text-gray-500">18 submissions have been rejected</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="relative">
+                                <input type="text" placeholder="Cari..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                            </div>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex items-center">
+                                <i class="fas fa-filter mr-2"></i> Filter
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Perguruan Tinggi</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Ahmad Fauzi</div>
+                                        <div class="text-sm text-gray-500">Inovasi Teknologi - Proposal</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Semarang</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent1 bg-opacity-20 text-accent1">Inovasi Teknologi</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6 Mei 2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
+                                        <button class="text-yellow-500 hover:text-opacity-80"><i class="fas fa-undo"></i></button>
+                                    </td>
+                                </tr>
+                                <!-- More rejected rows... -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Toggle sidebar on mobile
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('-translate-x-full');
+        });
+
+        // Toggle user menu
+        document.getElementById('userMenuButton').addEventListener('click', function() {
+            document.getElementById('userMenu').classList.toggle('hidden');
+        });
+
+        // Close user menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('#userMenuButton') && !event.target.closest('#userMenu')) {
+                document.getElementById('userMenu').classList.add('hidden');
+            }
+        });
+
+        // Tab functionality
+        document.getElementById('pendingTab').addEventListener('click', function() {
+            document.getElementById('pendingContent').classList.remove('hidden');
+            document.getElementById('approvedContent').classList.add('hidden');
+            document.getElementById('rejectedContent').classList.add('hidden');
+            
+            document.getElementById('pendingTab').classList.add('border-primary', 'text-primary');
+            document.getElementById('pendingTab').classList.remove('border-transparent', 'text-gray-500');
+            
+            document.getElementById('approvedTab').classList.remove('border-primary', 'text-primary');
+            document.getElementById('approvedTab').classList.add('border-transparent', 'text-gray-500');
+            
+            document.getElementById('rejectedTab').classList.remove('border-primary', 'text-primary');
+            document.getElementById('rejectedTab').classList.add('border-transparent', 'text-gray-500');
+        });
+
+        document.getElementById('approvedTab').addEventListener('click', function() {
+            document.getElementById('pendingContent').classList.add('hidden');
+            document.getElementById('approvedContent').classList.remove('hidden');
+            document.getElementById('rejectedContent').classList.add('hidden');
+            
+            document.getElementById('pendingTab').classList.remove('border-primary', 'text-primary');
+            document.getElementById('pendingTab').classList.add('border-transparent', 'text-gray-500');
+            
+            document.getElementById('approvedTab').classList.add('border-primary', 'text-primary');
+            document.getElementById('approvedTab').classList.remove('border-transparent', 'text-gray-500');
+            
+            document.getElementById('rejectedTab').classList.remove('border-primary', 'text-primary');
+            document.getElementById('rejectedTab').classList.add('border-transparent', 'text-gray-500');
+        });
+
+        document.getElementById('rejectedTab').addEventListener('click', function() {
+            document.getElementById('pendingContent').classList.add('hidden');
+            document.getElementById('approvedContent').classList.add('hidden');
+            document.getElementById('rejectedContent').classList.remove('hidden');
+            
+            document.getElementById('pendingTab').classList.remove('border-primary', 'text-primary');
+            document.getElementById('pendingTab').classList.add('border-transparent', 'text-gray-500');
+            
+            document.getElementById('approvedTab').classList.remove('border-primary', 'text-primary');
+            document.getElementById('approvedTab').classList.add('border-transparent', 'text-gray-500');
+            
+            document.getElementById('rejectedTab').classList.add('border-primary', 'text-primary');
+            document.getElementById('rejectedTab').classList.remove('border-transparent', 'text-gray-500');
+        });
+    </script>
+</body>
+</html>

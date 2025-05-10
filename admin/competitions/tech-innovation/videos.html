@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inovasi Teknologi - Video | AITeC 2025 Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F25922',
+                        secondary: '#F22727',
+                        accent1: '#90BF2A',
+                        accent2: '#509625',
+                        accent3: '#FEBF0F',
+                        accent4: '#FC9804',
+                        accent5: '#44AED5',
+                        accent6: '#0C339A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50" id="sidebar">
+        <!-- Sidebar content same as competitions/index.html -->
+        <!-- ... -->
+    </div>
+
+    <!-- Main Content -->
+    <div class="md:ml-64 transition-all duration-300">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-6 py-3">
+                <div class="flex items-center">
+                    <button id="sidebarToggle" class="md:hidden text-gray-600 focus:outline-none mr-4">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-semibold text-gray-800">Inovasi Teknologi - Video</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span class="absolute top-3 right-3 md:right-auto md:left-3 h-2 w-2 rounded-full bg-red-500"></span>
+                    </button>
+                    <div class="relative">
+                        <button id="userMenuButton" class="flex items-center focus:outline-none">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="w-8 h-8 rounded-full">
+                            <span class="ml-2 text-gray-700 hidden md:inline">Admin</span>
+                            <i class="fas fa-chevron-down ml-1 text-xs text-gray-600"></i>
+                        </button>
+                        <div id="userMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                            <a href="../../../index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-6">
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="px-6 py-4 border-b border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between">
+                    <h3 class="font-semibold text-gray-800 mb-2 md:mb-0">Video Presentasi Inovasi Teknologi</h3>
+                    <div class="flex items-center space-x-2">
+                        <div class="relative">
+                            <input type="text" placeholder="Cari video..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                        </div>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex items-center">
+                            <i class="fas fa-filter mr-2"></i> Filter
+                        </button>
+                        <button class="bg-primary hover:bg-opacity-90 text-white px-4 py-2 rounded-lg flex items-center">
+                            <i class="fas fa-download mr-2"></i> Export
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+                    <!-- Video Card 1 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
+                        <div class="relative">
+                            <div class="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
+                                <img src="https://source.unsplash.com/random/600x400/?technology" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <button class="bg-black bg-opacity-50 rounded-full p-4 text-white hover:bg-opacity-70">
+                                        <i class="fas fa-play text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                <i class="fas fa-clock mr-1"></i> 5:32
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Sistem Irigasi Otomatis Berbasis IoT</h3>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span class="mr-3"><i class="fas fa-user mr-1"></i> Politeknik Negeri Jember</span>
+                                <span><i class="fas fa-calendar-alt mr-1"></i> 15 Mei 2025</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-500"><i class="fas fa-eye mr-1"></i> 124 views</span>
+                                <div class="flex space-x-2">
+                                    <button class="text-primary hover:text-opacity-80"><i class="fas fa-eye"></i></button>
+                                    <button class="text-green-500 hover:text-opacity-80"><i class="fas fa-check"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Card 2 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
+                        <div class="relative">
+                            <div class="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
+                                <img src="https://source.unsplash.com/random/600x400/?agriculture" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <button class="bg-black bg-opacity-50 rounded-full p-4 text-white hover:bg-opacity-70">
+                                        <i class="fas fa-play text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                <i class="fas fa-clock mr-1"></i> 7:15
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Aplikasi Monitoring Tanaman Berbasis AI</h3>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span class="mr-3"><i class="fas fa-user mr-1"></i> Politeknik Negeri Bandung</span>
+                                <span><i class="fas fa-calendar-alt mr-1"></i> 14 Mei 2025</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-500"><i class="fas fa-eye mr-1"></i> 98 views</span>
+                                <div class="flex space-x-2">
+                                    <button class="text-primary hover:text-opacity-80"><i class="fas fa-eye"></i></button>
+                                    <button class="text-green-500 hover:text-opacity-80"><i class="fas fa-check"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Card 3 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
+                        <div class="relative">
+                            <div class="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
+                                <img src="https://source.unsplash.com/random/600x400/?drone" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <button class="bg-black bg-opacity-50 rounded-full p-4 text-white hover:bg-opacity-70">
+                                        <i class="fas fa-play text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                <i class="fas fa-clock mr-1"></i> 6:45
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Drone untuk Pemupukan Presisi</h3>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span class="mr-3"><i class="fas fa-user mr-1"></i> Politeknik Negeri Malang</span>
+                                <span><i class="fas fa-calendar-alt mr-1"></i> 13 Mei 2025</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-500"><i class="fas fa-eye mr-1"></i> 156 views</span>
+                                <div class="flex space-x-2">
+                                    <button class="text-primary hover:text-opacity-80"><i class="fas fa-eye"></i></button>
+                                    <button class="text-green-500 hover:text-opacity-80"><i class="fas fa-check"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Card 4 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
+                        <div class="relative">
+                            <div class="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
+                                <img src="https://source.unsplash.com/random/600x400/?hydroponic" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <button class="bg-black bg-opacity-50 rounded-full p-4 text-white hover:bg-opacity-70">
+                                        <i class="fas fa-play text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                <i class="fas fa-clock mr-1"></i> 8:12
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Sistem Hidroponik Otomatis dengan Energi Surya</h3>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span class="mr-3"><i class="fas fa-user mr-1"></i> Politeknik Negeri Semarang</span>
+                                <span><i class="fas fa-calendar-alt mr-1"></i> 12 Mei 2025</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-500"><i class="fas fa-eye mr-1"></i> 87 views</span>
+                                <div class="flex space-x-2">
+                                    <button class="text-primary hover:text-opacity-80"><i class="fas fa-eye"></i></button>
+                                    <button class="text-green-500 hover:text-opacity-80"><i class="fas fa-check"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Card 5 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
+                        <div class="relative">
+                            <div class="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
+                                <img src="https://source.unsplash.com/random/600x400/?camera" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <button class="bg-black bg-opacity-50 rounded-full p-4 text-white hover:bg-opacity-70">
+                                        <i class="fas fa-play text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">
+                                <i class="fas fa-clock mr-1"></i> 4:56
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Alat Deteksi Hama dengan Image Processing</h3>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span class="mr-3"><i class="fas fa-user mr-1"></i> Politeknik Negeri Jakarta</span>
+                                <span><i class="fas fa-calendar-alt mr-1"></i> 11 Mei 2025</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-500"><i class="fas fa-eye mr-1"></i> 112 views</span>
+                                <div class="flex space-x-2">
+                                    <button class="text-primary hover:text-opacity-80"><i class="fas fa-eye"></i></button>
+                                    <button class="text-green-500 hover:text-opacity-80"><i class="fas fa-check"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add Video Card -->
+                    <div class="bg-gray-50 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-primary hover:bg-gray-100 transition-colors duration-300 cursor-pointer">
+                        <div class="text-center p-6">
+                            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-primary bg-opacity-10 mb-3">
+                                <i class="fas fa-plus text-primary"></i>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900">Tambah Video Baru</h3>
+                            <p class="mt-1 text-sm text-gray-500">Upload video presentasi inovasi teknologi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="px-6 py-4 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between">
+                    <div class="text-sm text-gray-500 mb-2 md:mb-0">
+                        Menampilkan <span class="font-medium">1</span> sampai <span class="font-medium">5</span> dari <span class="font-medium">18</span> video
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            Sebelumnya
+                        </button>
+                        <button class="px-3 py-1 border border-primary bg-primary text-white rounded-md text-sm font-medium">
+                            1
+                        </button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            2
+                        </button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            3
+                        </button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            Selanjutnya
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Toggle sidebar on mobile
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('-translate-x-full');
+        });
+
+        // Toggle user menu
+        document.getElementById('userMenuButton').addEventListener('click', function() {
+            document.getElementById('userMenu').classList.toggle('hidden');
+        });
+
+        // Close user menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('#userMenuButton') && !event.target.closest('#userMenu')) {
+                document.getElementById('userMenu').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

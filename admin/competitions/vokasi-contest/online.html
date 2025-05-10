@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontes Vokasi - Daring | AITeC 2025 Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F25922',
+                        secondary: '#F22727',
+                        accent1: '#90BF2A',
+                        accent2: '#509625',
+                        accent3: '#FEBF0F',
+                        accent4: '#FC9804',
+                        accent5: '#44AED5',
+                        accent6: '#0C339A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50" id="sidebar">
+        <!-- Sidebar content same as competitions/index.html -->
+        <!-- ... -->
+    </div>
+
+    <!-- Main Content -->
+    <div class="md:ml-64 transition-all duration-300">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-6 py-3">
+                <div class="flex items-center">
+                    <button id="sidebarToggle" class="md:hidden text-gray-600 focus:outline-none mr-4">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-semibold text-gray-800">Kontes Vokasi - Daring</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span class="absolute top-3 right-3 md:right-auto md:left-3 h-2 w-2 rounded-full bg-red-500"></span>
+                    </button>
+                    <div class="relative">
+                        <button id="userMenuButton" class="flex items-center focus:outline-none">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="w-8 h-8 rounded-full">
+                            <span class="ml-2 text-gray-700 hidden md:inline">Admin</span>
+                            <i class="fas fa-chevron-down ml-1 text-xs text-gray-600"></i>
+                        </button>
+                        <div id="userMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                            <a href="../../../index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-6">
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="px-6 py-4 border-b border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between">
+                    <h3 class="font-semibold text-gray-800 mb-2 md:mb-0">Daftar Peserta Kontes Vokasi Daring</h3>
+                    <div class="flex items-center space-x-2">
+                        <div class="relative">
+                            <input type="text" placeholder="Cari peserta..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                        </div>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex items-center">
+                            <i class="fas fa-filter mr-2"></i> Filter
+                        </button>
+                        <button class="bg-primary hover:bg-opacity-90 text-white px-4 py-2 rounded-lg flex items-center">
+                            <i class="fas fa-plus mr-2"></i> Tambah
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Peserta</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Perguruan Tinggi</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sesi</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/42.jpg" alt="">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Dewi Sartika</div>
+                                            <div class="text-sm text-gray-500">dewisartika@example.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Jember</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Agribisnis Tanaman Pangan</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent5 bg-opacity-20 text-accent5">Sesi 1: 10 Juli</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Terkonfirmasi</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
+                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i class="fas fa-edit"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Budi Santoso</div>
+                                            <div class="text-sm text-gray-500">budisantoso@example.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Bandung</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Teknologi Produksi Tanaman</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent5 bg-opacity-20 text-accent5">Sesi 2: 11 Juli</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Pending</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
+                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i class="fas fa-edit"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/63.jpg" alt="">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Rina Wijaya</div>
+                                            <div class="text-sm text-gray-500">rinawijaya@example.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Malang</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Agribisnis Hortikultura</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent5 bg-opacity-20 text-accent5">Sesi 1: 10 Juli</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Terkonfirmasi</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
+                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i class="fas fa-edit"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/men/76.jpg" alt="">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Ahmad Fauzi</div>
+                                            <div class="text-sm text-gray-500">ahmadfauzi@example.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Semarang</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Teknologi Pengolahan Hasil Pertanian</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent5 bg-opacity-20 text-accent5">Sesi 3: 12 Juli</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Ditolak</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
+                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i class="fas fa-edit"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/28.jpg" alt="">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Siti Rahayu</div>
+                                            <div class="text-sm text-gray-500">sitirahayu@example.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Jakarta</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Agribisnis Perikanan</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent5 bg-opacity-20 text-accent5">Sesi 2: 11 Juli</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Terkonfirmasi</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
+                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i class="fas fa-edit"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="px-6 py-4 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between">
+                    <div class="text-sm text-gray-500 mb-2 md:mb-0">
+                        Menampilkan <span class="font-medium">1</span> sampai <span class="font-medium">5</span> dari <span class="font-medium">32</span> peserta
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            Sebelumnya
+                        </button>
+                        <button class="px-3 py-1 border border-primary bg-primary text-white rounded-md text-sm font-medium">
+                            1
+                        </button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            2
+                        </button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            3
+                        </button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            Selanjutnya
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Schedule Section -->
+            <div class="bg-white rounded-lg shadow overflow-hidden mt-6">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="font-semibold text-gray-800">Jadwal Kontes Vokasi Daring</h3>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Session 1 -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-accent5 px-4 py-2">
+                                <h4 class="font-semibold text-white">Sesi 1</h4>
+                                <p class="text-white text-opacity-90 text-sm">10 Juli 2025, 09:00 - 12:00 WIB</p>
+                            </div>
+                            <div class="p-4">
+                                <div class="mb-4">
+                                    <p class="text-sm font-medium text-gray-700 mb-1">Topik:</p>
+                                    <p class="text-sm text-gray-600">Agribisnis Tanaman Pangan & Hortikultura</p>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="text-sm font-medium text-gray-700 mb-1">Jumlah Peserta:</p>
+                                    <p class="text-sm text-gray-600">12 peserta</p>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="text-sm font-medium text-gray-700 mb-1">Link Zoom:</p>
+                                    <div class="flex items-center">
+                                        <input type="text" value="https://zoom.us/j/123456789" class="flex-1 px-3 py-1 border border-gray-300 rounded text-sm" readonly>
+                                        <button class="ml-2 text-accent5 hover:text-opacity-80">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-accent5 hover:bg-opacity-90 text-white py-2 px-4 rounded text-sm">
+                                    <i class="fas fa-calendar-plus mr-2"></i> Tambah ke Kalender
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Session 2 -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-accent5 px-4 py-2">
+                                <h4 class="font-semibold text-white">Sesi 2</h4>
+                                <p class="text-white text-opacity-90 text-sm">11 Juli 2025, 09:00 - 12:00 WIB</p>
+                            </div>
+                            <div class="p-4">
+                                <div class="mb-4">
+                                    <p class="text-sm font-medium text-gray-700 mb-1">Topik:</p>
+                                    <p class="text-sm text-gray-600">Teknologi Produksi Tanaman</p>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="text-sm font-medium text-gray-700 mb-1">Jumlah Peserta:</p>
+                                    <p class="text-sm text-gray-600">10 peserta</p>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="text-sm font-medium text-gray-700 mb-1">Link Zoom:</p>
+                                    <div class="flex items-center">
+                                        <input type="text" value="https://zoom.us/j/987654321" class="flex-1 px-3 py-1 border border-gray-300 rounded text-sm" readonly>
+                                        <button class="ml-2 text-accent5 hover:text-opacity-80">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-accent5 hover:bg-opacity-90 text-white py-2 px-4 rounded text-sm">
+                                    <i class="fas fa-calendar-plus mr-2"></i> Tambah ke Kalender
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Session 3 -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-accent5 px-4 py-2">
+                                <h4 class="font-semibold text-white">Sesi 3</h4>
+                                <p class="text-white text-opacity-90 text-sm">12 Juli 2025, 09:00 - 12:00 WIB</p>
+                            </div>
+                            <div class="p-4">
+                                <div class="mb-4">
+                                    <p class="text-sm font-medium text-gray-700 mb-1">Topik:</p>
+                                    <p class="text-sm text-gray-600">Teknologi Pengolahan Hasil Pertanian</p>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="text-sm font-medium text-gray-700 mb-1">Jumlah Peserta:</p>
+                                    <p class="text-sm text-gray-600">8 peserta</p>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="text-sm font-medium text-gray-700 mb-1">Link Zoom:</p>
+                                    <div class="flex items-center">
+                                        <input type="text" value="https://zoom.us/j/567891234" class="flex-1 px-3 py-1 border border-gray-300 rounded text-sm" readonly>
+                                        <button class="ml-2 text-accent5 hover:text-opacity-80">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-accent5 hover:bg-opacity-90 text-white py-2 px-4 rounded text-sm">
+                                    <i class="fas fa-calendar-plus mr-2"></i> Tambah ke Kalender
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Toggle sidebar on mobile
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('-translate-x-full');
+        });
+
+        // Toggle user menu
+        document.getElementById('userMenuButton').addEventListener('click', function() {
+            document.getElementById('userMenu').classList.toggle('hidden');
+        });
+
+        // Close user menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('#userMenuButton') && !event.target.closest('#userMenu')) {
+                document.getElementById('userMenu').classList.add('hidden');
+            }
+        });
+
+        // Copy zoom link functionality
+        document.querySelectorAll('[data-copy]').forEach(button => {
+            button.addEventListener('click', function() {
+                const zoomLink = this.previousElementSibling;
+                zoomLink.select();
+                document.execCommand('copy');
+                
+                // Show tooltip or notification
+                alert('Link Zoom telah disalin ke clipboard');
+            });
+        });
+    </script>
+</body>
+</html>

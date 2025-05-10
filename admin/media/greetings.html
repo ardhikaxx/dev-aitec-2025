@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media - Sambutan | AITeC 2025 Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F25922',
+                        secondary: '#F22727',
+                        accent1: '#90BF2A',
+                        accent2: '#509625',
+                        accent3: '#FEBF0F',
+                        accent4: '#FC9804',
+                        accent5: '#44AED5',
+                        accent6: '#0C339A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50" id="sidebar">
+        <!-- Sidebar content same as dashboard.html -->
+        <!-- ... -->
+    </div>
+
+    <!-- Main Content -->
+    <div class="md:ml-64 transition-all duration-300">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-6 py-3">
+                <div class="flex items-center">
+                    <button id="sidebarToggle" class="md:hidden text-gray-600 focus:outline-none mr-4">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-semibold text-gray-800">Media - Sambutan</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span class="absolute top-3 right-3 md:right-auto md:left-3 h-2 w-2 rounded-full bg-red-500"></span>
+                    </button>
+                    <div class="relative">
+                        <button id="userMenuButton" class="flex items-center focus:outline-none">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="w-8 h-8 rounded-full">
+                            <span class="ml-2 text-gray-700 hidden md:inline">Admin</span>
+                            <i class="fas fa-chevron-down ml-1 text-xs text-gray-600"></i>
+                        </button>
+                        <div id="userMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                            <a href="../../index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-6">
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="font-semibold text-gray-800">Sambutan dan Pesan</h3>
+                </div>
+                
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Director Greeting -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-primary px-4 py-3">
+                                <h4 class="font-semibold text-white">Sambutan Direktur</h4>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center mb-4">
+                                    <img src="https://randomuser.me/api/portraits/men/60.jpg" alt="Director" class="w-16 h-16 rounded-full mr-4">
+                                    <div>
+                                        <h5 class="font-medium">Prof. Dr. Ir. Bambang Sutrisno, M.Sc.</h5>
+                                        <p class="text-sm text-gray-600">Direktur Politeknik Negeri Jember</p>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                                    <p class="text-gray-700 italic mb-3">"Agricultural Innovation Technology Competition 2025 merupakan wadah yang tepat bagi mahasiswa politeknik untuk mengembangkan inovasi di bidang pertanian. Semoga melalui kompetisi ini, akan lahir solusi-solusi kreatif untuk menghadapi tantangan pertanian modern."</p>
+                                    <div class="flex justify-end">
+                                        <button class="text-primary hover:text-opacity-80 text-sm font-medium">
+                                            <i class="fas fa-edit mr-1"></i> Edit
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <button class="text-accent5 hover:text-opacity-80 text-sm font-medium">
+                                            <i class="fas fa-image mr-1"></i> Ganti Foto
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button class="text-red-500 hover:text-opacity-80 text-sm font-medium">
+                                            <i class="fas fa-trash mr-1"></i> Hapus
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Chairman Greeting -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-accent5 px-4 py-3">
+                                <h4 class="font-semibold text-white">Pesan Ketua Panitia</h4>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center mb-4">
+                                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Chairman" class="w-16 h-16 rounded-full mr-4">
+                                    <div>
+                                        <h5 class="font-medium">Dr. Ir. Siti Aminah, M.P.</h5>
+                                        <p class="text-sm text-gray-600">Ketua Panitia AITeC 2025</p>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                                    <p class="text-gray-700 italic mb-3">"Kami mengucapkan selamat datang kepada seluruh peserta AITeC 2025. Kompetisi ini dirancang untuk mendorong kreativitas dan inovasi di bidang teknologi pertanian. Semoga kita semua dapat belajar dan berkolaborasi untuk kemajuan pertanian Indonesia."</p>
+                                    <div class="flex justify-end">
+                                        <button class="text-primary hover:text-opacity-80 text-sm font-medium">
+                                            <i class="fas fa-edit mr-1"></i> Edit
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <button class="text-accent5 hover:text-opacity-80 text-sm font-medium">
+                                            <i class="fas fa-image mr-1"></i> Ganti Foto
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button class="text-red-500 hover:text-opacity-80 text-sm font-medium">
+                                            <i class="fas fa-trash mr-1"></i> Hapus
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add New Greeting -->
+                    <div class="mt-6 border-2 border-dashed border-gray-300 rounded-lg p-6 hover:border-primary hover:bg-gray-50 transition-colors duration-300 cursor-pointer">
+                        <div class="text-center">
+                            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-primary bg-opacity-10 mb-3">
+                                <i class="fas fa-plus text-primary"></i>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900">Tambah Sambutan Baru</h3>
+                            <p class="mt-1 text-sm text-gray-500">Tambahkan sambutan dari pejabat atau tokoh lainnya</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Greeting -->
+                    <div class="mt-6 border border-gray-200 rounded-lg overflow-hidden">
+                        <div class="bg-primary px-4 py-3">
+                            <h4 class="font-semibold text-white">Video Sambutan</h4>
+                        </div>
+                        <div class="p-6">
+                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col items-center justify-center">
+                                <div class="relative w-full max-w-2xl mb-4">
+                                    <div class="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
+                                        <img src="https://source.unsplash.com/random/800x450/?speech" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <button class="bg-black bg-opacity-50 rounded-full p-4 text-white hover:bg-opacity-70">
+                                                <i class="fas fa-play text-xl"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-full max-w-2xl">
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Judul Video</label>
+                                        <input type="text" value="Sambutan Pembukaan AITeC 2025" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Link Video</label>
+                                        <div class="flex">
+                                            <input type="text" value="https://youtube.com/watch?v=example123" class="flex-1 px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                            <button class="bg-primary hover:bg-opacity-90 text-white px-4 py-2 rounded-r-md">
+                                                <i class="fas fa-save"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <button class="bg-accent5 hover:bg-opacity-90 text-white px-4 py-2 rounded-md text-sm">
+                                            <i class="fas fa-upload mr-2"></i> Upload Video Baru
+                                        </button>
+                                        <button class="text-red-500 hover:text-opacity-80 text-sm font-medium">
+                                            <i class="fas fa-trash mr-1"></i> Hapus Video
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Toggle sidebar on mobile
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('-translate-x-full');
+        });
+
+        // Toggle user menu
+        document.getElementById('userMenuButton').addEventListener('click', function() {
+            document.getElementById('userMenu').classList.toggle('hidden');
+        });
+
+        // Close user menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('#userMenuButton') && !event.target.closest('#userMenu')) {
+                document.getElementById('userMenu').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITeC 2025 - Admin Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F25922',
+                        secondary: '#F22727',
+                        accent1: '#90BF2A',
+                        accent2: '#509625',
+                        accent3: '#FEBF0F',
+                        accent4: '#FC9804',
+                        accent5: '#44AED5',
+                        accent6: '#0C339A',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #F25922 0%, #F22727 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .input-field {
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            box-shadow: 0 0 0 3px rgba(242, 89, 34, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w-full max-w-md px-6 py-8">
+        <div class="bg-white rounded-xl p-8 login-card">
+            <div class="text-center mb-8">
+                <img src="../assets/logo/logotype-h.png" alt="AITeC Logo" class="h-20 mx-auto mb-4">
+                <h2 class="text-2xl font-bold text-gray-800">Admin Dashboard</h2>
+                <p class="text-gray-600 mt-2">Masukkan kredensial Anda untuk masuk</p>
+            </div>
+
+            <form>
+                <div class="mb-6">
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-envelope text-gray-400"></i>
+                        </div>
+                        <input type="email" id="email"
+                            class="input-field pl-10 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none"
+                            placeholder="admin@aitec2025.id">
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-lock text-gray-400"></i>
+                        </div>
+                        <input type="password" id="password"
+                            class="input-field pl-10 w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:outline-none"
+                            placeholder="••••••••">
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox"
+                            class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-700">Ingat saya</label>
+                    </div>
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-primary hover:text-primary-dark">Lupa password?</a>
+                    </div>
+                </div>
+
+                <div class="">
+                    <button type="submit"
+                        class="w-full bg-secondary text-white py-3 px-4 rounded-lg font-medium hover:bg-opacity-90 transition focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                        Masuk
+                    </button>
+                    <a href="../index.html" class="w-full bg-white border border-secondary border-1 text-primary py-3 px-4 rounded-lg font-medium hover:bg-opacity-90 transition focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 mt-2 block text-center">
+                        Kembali
+                    </a>
+                </div>
+            </form>
+
+            <div class="mt-6 text-center">
+                <p class="text-sm text-gray-600">
+                    © 2025 AITeC - Politeknik Negeri Jember
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email && password) {
+                window.location.href = '../admin/dashboard.html';
+            } else {
+                alert('Silakan isi email dan password');
+            }
+        });
+    </script>
+</body>
+
+</html>

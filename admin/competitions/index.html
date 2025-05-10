@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Kompetisi | AITeC 2025 Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F25922',
+                        secondary: '#F22727',
+                        accent1: '#90BF2A',
+                        accent2: '#509625',
+                        accent3: '#FEBF0F',
+                        accent4: '#FC9804',
+                        accent5: '#44AED5',
+                        accent6: '#0C339A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50" id="sidebar">
+        <div class="flex items-center justify-center h-16 bg-primary">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-seedling text-white text-2xl"></i>
+                <span class="text-white font-bold text-xl">AITeC 2025</span>
+            </div>
+        </div>
+        <div class="overflow-y-auto h-full py-4">
+            <div class="px-4 py-2">
+                <div class="flex items-center space-x-3 p-3 bg-accent1 bg-opacity-10 rounded-lg">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="w-10 h-10 rounded-full">
+                    <div>
+                        <p class="font-medium">Admin User</p>
+                        <p class="text-xs text-gray-500">Super Admin</p>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="mt-6">
+                <div class="px-4">
+                    <p class="text-xs uppercase text-gray-500 font-medium mb-4">Main Menu</p>
+                </div>
+                
+                <a href="../dashboard.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-tachometer-alt mr-3"></i>
+                    <span>Dashboard</span>
+                </a>
+                
+                <a href="../participants.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-users mr-3"></i>
+                    <span>Data Peserta</span>
+                </a>
+                
+                <div class="group">
+                    <button class="flex items-center justify-between w-full px-6 py-3 text-primary bg-primary bg-opacity-10 border-r-4 border-primary">
+                        <div class="flex items-center">
+                            <i class="fas fa-trophy mr-3"></i>
+                            <span>Daftar Kompetisi</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                    </button>
+                    <div class="block">
+                        <a href="tech-innovation/proposals.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                            <span>Inovasi Teknologi</span>
+                        </a>
+                        <a href="voc-contest/online.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                            <span>Kontes Vokasi</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="group">
+                    <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-photo-video mr-3"></i>
+                            <span>Media</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                    </button>
+                    <div class="hidden group-hover:block hover:block">
+                        <a href="../media/news.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                            <span>News</span>
+                        </a>
+                        <a href="../media/gallery.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                            <span>Gallery</span>
+                        </a>
+                        <a href="../media/greetings.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                            <span>Sambutan</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="../universities.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-university mr-3"></i>
+                    <span>Data Perguruan Tinggi</span>
+                </a>
+                
+                <a href="../committees.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-user-tie mr-3"></i>
+                    <span>Data Panitia</span>
+                </a>
+                
+                <a href="../verification.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-check-circle mr-3"></i>
+                    <span>Verifikasi</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="md:ml-64 transition-all duration-300">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-6 py-3">
+                <div class="flex items-center">
+                    <button id="sidebarToggle" class="md:hidden text-gray-600 focus:outline-none mr-4">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-semibold text-gray-800">Daftar Kompetisi</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span class="absolute top-3 right-3 md:right-auto md:left-3 h-2 w-2 rounded-full bg-red-500"></span>
+                    </button>
+                    <div class="relative">
+                        <button id="userMenuButton" class="flex items-center focus:outline-none">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="w-8 h-8 rounded-full">
+                            <span class="ml-2 text-gray-700 hidden md:inline">Admin</span>
+                            <i class="fas fa-chevron-down ml-1 text-xs text-gray-600"></i>
+                        </button>
+                        <div id="userMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                            <a href="../index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Inovasi Teknologi Card -->
+                <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="bg-accent1 p-4">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-bold text-white">Inovasi Teknologi</h2>
+                            <i class="fas fa-lightbulb text-white text-2xl"></i>
+                        </div>
+                        <p class="text-white text-opacity-90 text-sm mt-1">Kompetisi inovasi teknologi pertanian terbaru</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-gray-500 text-sm">Total Tim</p>
+                                <h3 class="text-2xl font-bold">42</h3>
+                            </div>
+                            <div class="bg-accent1 bg-opacity-10 p-3 rounded-full">
+                                <i class="fas fa-users text-accent1 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-500 text-sm mb-2">Status Pendaftaran</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-accent1 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">75% dari target peserta</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="tech-innovation/proposals.html" class="flex-1 bg-accent1 hover:bg-opacity-90 text-white text-center py-2 px-4 rounded-lg">
+                                <i class="fas fa-file-alt mr-2"></i> Proposal
+                            </a>
+                            <a href="tech-innovation/videos.html" class="flex-1 bg-accent5 hover:bg-opacity-90 text-white text-center py-2 px-4 rounded-lg">
+                                <i class="fas fa-video mr-2"></i> Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kontes Vokasi Card -->
+                <div class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="bg-accent5 p-4">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-bold text-white">Kontes Vokasi</h2>
+                            <i class="fas fa-medal text-white text-2xl"></i>
+                        </div>
+                        <p class="text-white text-opacity-90 text-sm mt-1">Kompetisi keterampilan vokasi bidang pertanian</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-gray-500 text-sm">Total Peserta</p>
+                                <h3 class="text-2xl font-bold">78</h3>
+                            </div>
+                            <div class="bg-accent5 bg-opacity-10 p-3 rounded-full">
+                                <i class="fas fa-user-graduate text-accent5 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-500 text-sm mb-2">Status Pendaftaran</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-accent5 h-2.5 rounded-full" style="width: 65%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">65% dari target peserta</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="voc-contest/online.html" class="flex-1 bg-accent5 hover:bg-opacity-90 text-white text-center py-2 px-4 rounded-lg">
+                                <i class="fas fa-globe mr-2"></i> Daring
+                            </a>
+                            <a href="voc-contest/offline.html" class="flex-1 bg-accent3 hover:bg-opacity-90 text-white text-center py-2 px-4 rounded-lg">
+                                <i class="fas fa-map-marker-alt mr-2"></i> Luring
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="bg-white rounded-lg shadow overflow-hidden mt-6">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="font-semibold text-gray-800">Timeline Kompetisi</h3>
+                </div>
+                <div class="p-6">
+                    <div class="relative">
+                        <!-- Timeline line -->
+                        <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+                        
+                        <!-- Timeline items -->
+                        <div class="relative mb-8 pl-12">
+                            <div class="absolute left-0 top-0 h-8 w-8 rounded-full bg-primary flex items-center justify-center">
+                                <i class="fas fa-flag text-white text-sm"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Pendaftaran Dibuka</h4>
+                            <p class="text-sm text-gray-600">1 Mei 2025</p>
+                            <p class="mt-1 text-sm text-gray-500">Pendaftaran kompetisi dibuka untuk seluruh politeknik di Indonesia</p>
+                        </div>
+                        
+                        <div class="relative mb-8 pl-12">
+                            <div class="absolute left-0 top-0 h-8 w-8 rounded-full bg-accent1 flex items-center justify-center">
+                                <i class="fas fa-file-upload text-white text-sm"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Batas Pengumpulan Proposal</h4>
+                            <p class="text-sm text-gray-600">15 Juni 2025</p>
+                            <p class="mt-1 text-sm text-gray-500">Batas akhir pengumpulan proposal inovasi teknologi</p>
+                        </div>
+                        
+                        <div class="relative mb-8 pl-12">
+                            <div class="absolute left-0 top-0 h-8 w-8 rounded-full bg-accent5 flex items-center justify-center">
+                                <i class="fas fa-video text-white text-sm"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Pengumpulan Video Presentasi</h4>
+                            <p class="text-sm text-gray-600">30 Juni 2025</p>
+                            <p class="mt-1 text-sm text-gray-500">Batas akhir pengumpulan video presentasi inovasi</p>
+                        </div>
+                        
+                        <div class="relative mb-8 pl-12">
+                            <div class="absolute left-0 top-0 h-8 w-8 rounded-full bg-accent3 flex items-center justify-center">
+                                <i class="fas fa-laptop text-white text-sm"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Kontes Vokasi Daring</h4>
+                            <p class="text-sm text-gray-600">10-12 Juli 2025</p>
+                            <p class="mt-1 text-sm text-gray-500">Pelaksanaan kontes vokasi secara daring</p>
+                        </div>
+                        
+                        <div class="relative pl-12">
+                            <div class="absolute left-0 top-0 h-8 w-8 rounded-full bg-secondary flex items-center justify-center">
+                                <i class="fas fa-trophy text-white text-sm"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Pengumuman Pemenang</h4>
+                            <p class="text-sm text-gray-600">15 Agustus 2025</p>
+                            <p class="mt-1 text-sm text-gray-500">Pengumuman pemenang seluruh kategori kompetisi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Toggle sidebar on mobile
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('-translate-x-full');
+        });
+
+        // Toggle user menu
+        document.getElementById('userMenuButton').addEventListener('click', function() {
+            document.getElementById('userMenu').classList.toggle('hidden');
+        });
+
+        // Close user menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('#userMenuButton') && !event.target.closest('#userMenu')) {
+                document.getElementById('userMenu').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
