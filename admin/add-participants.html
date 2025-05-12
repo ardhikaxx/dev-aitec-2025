@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Peserta | AITeC 2025 Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="../assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F25922',
+                        secondary: '#F22727',
+                        accent1: '#90BF2A',
+                        accent2: '#509625',
+                        accent3: '#FEBF0F',
+                        accent4: '#FC9804',
+                        accent5: '#44AED5',
+                        accent6: '#0C339A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50"
+        id="sidebar">
+        <div class="flex items-center justify-center h-16 bg-primary">
+            <div class="flex items-center space-x-2">
+                <img src="../assets/logo/logotype-h-white.png" class="h-10 md:h-11 w-auto" alt="AITeC Logo">
+            </div>
+        </div>
+        <div class="overflow-y-auto h-full py-4">
+            <div class="px-4 py-2">
+                <div class="flex items-center space-x-3 p-3 bg-accent1 bg-opacity-10 rounded-lg">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin"
+                        class="w-10 h-10 rounded-full">
+                    <div>
+                        <p class="font-medium">Admin User</p>
+                        <p class="text-xs text-gray-500">Super Admin</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="mt-6">
+                <div class="px-4">
+                    <p class="text-xs uppercase text-gray-500 font-medium mb-4">Main Menu</p>
+                </div>
+
+                <a href="./dashboard.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-tachometer-alt mr-3"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="./participants.html"
+                    class="flex items-center px-6 py-3 text-primary bg-primary bg-opacity-10 border-r-4 border-primary text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-users mr-3"></i>
+                    <span>Data Peserta</span>
+                </a>
+
+                <div class="group">
+                    <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-trophy mr-3"></i>
+                            <span>Daftar Kompetisi</span>
+                        </div>
+                        <i
+                            class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                    </button>
+                    <div class="hidden group-hover:block">
+                        <a href="./competitions/index.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-medal mr-3"></i>
+                            Daftar Kompetisi
+                        </a>
+
+                        <!-- Menu Inovasi Teknologi dengan submenu -->
+                        <div class="group/tech relative">
+                            <button
+                                class="flex items-center justify-between w-full px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-bolt mr-3"></i>
+                                    <span>Inovasi Teknologi</span>
+                                </div>
+                                <i
+                                    class="fas fa-chevron-down text-xs transform group-hover/tech:rotate-180 transition duration-200"></i>
+                            </button>
+                            <div class="hidden group-hover/tech:block ml-4 pl-2 border-l-2 border-gray-200">
+                                <a href="./competitions/tech-innovation/proposals.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Proposal</span>
+                                </a>
+                                <a href="./competitions/tech-innovation/videos.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Video Submission</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Menu Kontes Vokasi dengan submenu -->
+                        <div class="group/vokasi relative">
+                            <button
+                                class="flex items-center justify-between w-full px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-graduation-cap mr-3"></i>
+                                    <span>Kontes Vokasi</span>
+                                </div>
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </button>
+                            <div class="hidden group-hover/vokasi:block ml-4 pl-2 border-l-2 border-gray-200">
+                                <a href="./competitions/vokasi-contest/online.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Daring</span>
+                                </a>
+                                <a href="./competitions/vokasi-contest/offline.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Luring</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-photo-video mr-3"></i>
+                            <span>Media</span>
+                        </div>
+                        <i
+                            class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                    </button>
+                    <div class="hidden group-hover:block hover:block">
+                        <a href="./media/news.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                            <span>News</span>
+                        </a>
+                        <a href="./media/gallery.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                            <span>Gallery</span>
+                        </a>
+                        <a href="./media/greetings.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                            <span>Sambutan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="./universities.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-university mr-3"></i>
+                    <span>Data Perguruan Tinggi</span>
+                </a>
+
+                <a href="./committees.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-user-tie mr-3"></i>
+                    <span>Data Panitia</span>
+                </a>
+
+                <a href="./verification.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-check-circle mr-3"></i>
+                    <span>Verifikasi</span>
+                </a>
+
+                <!-- Mobile close button - visible only on mobile -->
+                <div class="md:hidden px-6 py-3 mt-4 flex justify-center">
+                    <button id="sidebarClose"
+                        class="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full text-gray-600 hover:bg-gray-300 transition-colors duration-200">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="md:ml-64 transition-all duration-300">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-6 py-3">
+                <div class="flex items-center">
+                    <button id="sidebarToggle" class="md:hidden text-gray-600 focus:outline-none mr-4">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-semibold text-gray-800">Tambah Peserta Baru</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button id="userMenuButton" class="flex items-center focus:outline-none">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin"
+                                class="w-8 h-8 rounded-full">
+                            <span class="ml-2 text-gray-700 hidden md:inline">Admin</span>
+                            <i class="fas fa-chevron-down ml-1 text-xs text-gray-600"></i>
+                        </button>
+                        <div id="userMenu"
+                            class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                            <a href="index.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-6">
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <!-- Breadcrumb -->
+                <div class="px-6 py-4 border-b border-gray-200 bg-gray-50">
+                    <nav class="flex" aria-label="Breadcrumb">
+                        <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                            <li class="inline-flex items-center">
+                                <a href="./dashboard.html"
+                                    class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary">
+                                    <i class="fas fa-home mr-2"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <div class="flex items-center">
+                                    <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                    <a href="./participants.html"
+                                        class="ml-2 text-sm font-medium text-gray-700 hover:text-primary">Data
+                                        Peserta</a>
+                                </div>
+                            </li>
+                            <li aria-current="page">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                    <span class="ml-2 text-sm font-medium text-primary">Tambah Peserta</span>
+                                </div>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- Form Section -->
+                <div class="p-6">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Personal Information -->
+                            <div class="col-span-2">
+                                <h3 class="text-lg font-medium text-gray-900 mb-4 flex items-center">
+                                    <i class="fas fa-user-circle mr-2 text-primary"></i>
+                                    Informasi Pribadi
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- Photo Upload -->
+                                    <div class="col-span-2 md:col-span-1">
+                                        <div class="flex items-center space-x-4">
+                                            <div class="relative">
+                                                <!-- Ganti img dengan div yang menampilkan ikon atau gambar -->
+                                                <div id="photoPreviewContainer"
+                                                    class="w-32 h-32 rounded-full border-2 border-gray-300 bg-gray-100 flex items-center justify-center">
+                                                    <i id="defaultPhotoIcon"
+                                                        class="fas fa-user text-4xl text-gray-400"></i>
+                                                    <img id="previewPhoto"
+                                                        class="hidden w-full h-full rounded-full object-cover"
+                                                        alt="Preview Foto">
+                                                </div>
+                                                <label for="photoUpload"
+                                                    class="absolute bottom-1 right-1 bg-primary text-white rounded-full px-2 py-1 cursor-pointer hover:bg-opacity-90">
+                                                    <i class="fas fa-camera"></i>
+                                                    <input id="photoUpload" type="file" class="hidden" accept="image/*">
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm text-gray-500">Upload foto peserta dengan format
+                                                    JPG/PNG (maks. 2MB)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Nama Lengkap -->
+                                    <div class="col-span-2 md:col-span-1">
+                                        <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Nama
+                                            Lengkap <span class="text-red-500">*</span></label>
+                                        <input type="text" id="fullName" name="fullName"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            placeholder="Masukkan nama lengkap" required>
+                                    </div>
+
+                                    <!-- Email -->
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email
+                                            <span class="text-red-500">*</span></label>
+                                        <input type="email" id="email" name="email"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            placeholder="Masukkan email" required>
+                                    </div>
+
+                                    <!-- Nomor Telepon -->
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor
+                                            Telepon <span class="text-red-500">*</span></label>
+                                        <input type="tel" id="phone" name="phone"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            placeholder="Masukkan nomor telepon" required>
+                                    </div>
+
+                                    <!-- Tanggal Lahir -->
+                                    <div>
+                                        <label for="birthDate"
+                                            class="block text-sm font-medium text-gray-700 mb-1">Tanggal Lahir <span
+                                                class="text-red-500">*</span></label>
+                                        <input type="date" id="birthDate" name="birthDate"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            required>
+                                    </div>
+
+                                    <!-- Jenis Kelamin -->
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Jenis Kelamin <span
+                                                class="text-red-500">*</span></label>
+                                        <div class="flex space-x-4">
+                                            <label class="inline-flex items-center">
+                                                <input type="radio" name="gender" value="male"
+                                                    class="text-primary focus:ring-primary" checked>
+                                                <span class="ml-2">Laki-laki</span>
+                                            </label>
+                                            <label class="inline-flex items-center">
+                                                <input type="radio" name="gender" value="female"
+                                                    class="text-primary focus:ring-primary">
+                                                <span class="ml-2">Perempuan</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Institutional Information -->
+                            <div class="col-span-2">
+                                <h3 class="text-lg font-medium text-gray-900 mb-4 flex items-center">
+                                    <i class="fas fa-university mr-2 text-primary"></i>
+                                    Informasi Institusi
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- Perguruan Tinggi -->
+                                    <div class="col-span-2">
+                                        <label for="university"
+                                            class="block text-sm font-medium text-gray-700 mb-1">Perguruan Tinggi <span
+                                                class="text-red-500">*</span></label>
+                                        <select id="university" name="university"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            required>
+                                            <option value="" disabled selected>Pilih perguruan tinggi</option>
+                                            <option value="polije">Politeknik Negeri Jember</option>
+                                            <option value="polban">Politeknik Negeri Bandung</option>
+                                            <option value="polinema">Politeknik Negeri Malang</option>
+                                            <option value="polines">Politeknik Negeri Semarang</option>
+                                            <option value="poltekkes">Politeknik Kesehatan Kemenkes Malang</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Program Studi -->
+                                    <div>
+                                        <label for="studyProgram"
+                                            class="block text-sm font-medium text-gray-700 mb-1">Program Studi <span
+                                                class="text-red-500">*</span></label>
+                                        <input type="text" id="studyProgram" name="studyProgram"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            placeholder="Masukkan program studi" required>
+                                    </div>
+
+                                    <!-- Tahun Angkatan -->
+                                    <div>
+                                        <label for="year" class="block text-sm font-medium text-gray-700 mb-1">Tahun
+                                            Angkatan <span class="text-red-500">*</span></label>
+                                        <input type="number" id="year" name="year" min="2000" max="2025"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            placeholder="Masukkan tahun angkatan" required>
+                                    </div>
+
+                                    <!-- NIM/NISN -->
+                                    <div>
+                                        <label for="studentId"
+                                            class="block text-sm font-medium text-gray-700 mb-1">NIM/NISN <span
+                                                class="text-red-500">*</span></label>
+                                        <input type="text" id="studentId" name="studentId"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            placeholder="Masukkan NIM/NISN" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Competition Information -->
+                            <div class="col-span-2">
+                                <h3 class="text-lg font-medium text-gray-900 mb-4 flex items-center">
+                                    <i class="fas fa-trophy mr-2 text-primary"></i>
+                                    Informasi Kompetisi
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- Kategori Kompetisi -->
+                                    <div class="col-span-2">
+                                        <label for="competitionCategory"
+                                            class="block text-sm font-medium text-gray-700 mb-1">Kategori Kompetisi
+                                            <span class="text-red-500">*</span></label>
+                                        <select id="competitionCategory" name="competitionCategory"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            required>
+                                            <option value="" disabled selected>Pilih kategori kompetisi</option>
+                                            <option value="tech-innovation">Inovasi Teknologi</option>
+                                            <option value="vocational-online">Kontes Vokasi - Daring</option>
+                                            <option value="vocational-offline">Kontes Vokasi - Luring</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Sub Kategori (conditional) -->
+                                    <div id="subCategoryContainer" class="col-span-2 hidden">
+                                        <label for="subCategory"
+                                            class="block text-sm font-medium text-gray-700 mb-1">Sub Kategori <span
+                                                class="text-red-500">*</span></label>
+                                        <select id="subCategory" name="subCategory"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                            <option value="" disabled selected>Pilih sub kategori</option>
+                                            <!-- Options will be populated by JavaScript -->
+                                        </select>
+                                    </div>
+
+                                    <!-- Status Peserta -->
+                                    <div>
+                                        <label for="status" class="block text-sm font-medium text-gray-700 mb-1">Status
+                                            Peserta <span class="text-red-500">*</span></label>
+                                        <select id="status" name="status"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            required>
+                                            <option value="active" selected>Aktif</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="rejected">Ditolak</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Alasan Penolakan (conditional) -->
+                                    <div id="rejectionReasonContainer" class="hidden">
+                                        <label for="rejectionReason"
+                                            class="block text-sm font-medium text-gray-700 mb-1">Alasan Penolakan <span
+                                                class="text-red-500">*</span></label>
+                                        <textarea id="rejectionReason" name="rejectionReason" rows="2"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            placeholder="Masukkan alasan penolakan"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Information -->
+                            <div class="col-span-2">
+                                <h3 class="text-lg font-medium text-gray-900 mb-4 flex items-center">
+                                    <i class="fas fa-info-circle mr-2 text-primary"></i>
+                                    Informasi Tambahan
+                                </h3>
+                                <div class="grid grid-cols-1 gap-6">
+                                    <!-- Alamat -->
+                                    <div>
+                                        <label for="address"
+                                            class="block text-sm font-medium text-gray-700 mb-1">Alamat</label>
+                                        <textarea id="address" name="address" rows="3"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            placeholder="Masukkan alamat lengkap"></textarea>
+                                    </div>
+
+                                    <!-- Media Sosial -->
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Media Sosial</label>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div class="flex items-center">
+                                                <span
+                                                    class="inline-flex items-center justify-center w-10 h-10 bg-blue-100 rounded-l-lg">
+                                                    <i class="fab fa-instagram text-blue-600"></i>
+                                                </span>
+                                                <input type="text" name="instagram"
+                                                    class="flex-1 px-4 py-2 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                                    placeholder="Username Instagram">
+                                            </div>
+                                            <div class="flex items-center">
+                                                <span
+                                                    class="inline-flex items-center justify-center w-10 h-10 bg-blue-100 rounded-l-lg">
+                                                    <i class="fab fa-linkedin text-blue-600"></i>
+                                                </span>
+                                                <input type="text" name="linkedin"
+                                                    class="flex-1 px-4 py-2 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                                    placeholder="Profil LinkedIn">
+                                            </div>
+                                            <div class="flex items-center">
+                                                <span
+                                                    class="inline-flex items-center justify-center w-10 h-10 bg-blue-100 rounded-l-lg">
+                                                    <i class="fab fa-github text-gray-800"></i>
+                                                </span>
+                                                <input type="text" name="github"
+                                                    class="flex-1 px-4 py-2 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                                    placeholder="Username GitHub">
+                                            </div>
+                                            <div class="flex items-center">
+                                                <span
+                                                    class="inline-flex items-center justify-center w-10 h-10 bg-blue-100 rounded-l-lg">
+                                                    <i class="fab fa-twitter text-blue-400"></i>
+                                                </span>
+                                                <input type="text" name="twitter"
+                                                    class="flex-1 px-4 py-2 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                                    placeholder="Username Twitter">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- CV/Resume -->
+                                    <div>
+                                        <label for="cv" class="block text-sm font-medium text-gray-700 mb-1">Upload
+                                            CV/Resume</label>
+                                        <div class="flex items-center justify-center w-full">
+                                            <label for="cvUpload"
+                                                class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                                                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                                    <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2"></i>
+                                                    <p class="mb-2 text-sm text-gray-500"><span
+                                                            class="font-semibold">Klik untuk upload</span> atau drag and
+                                                        drop</p>
+                                                    <p class="text-xs text-gray-500">PDF, DOC, DOCX (maks. 5MB)</p>
+                                                </div>
+                                                <input id="cvUpload" type="file" class="hidden"
+                                                    accept=".pdf,.doc,.docx">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="mt-8 flex justify-end space-x-3">
+                            <a href="./participants.html"
+                                class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                Batal
+                            </a>
+                            <button type="submit"
+                                class="px-6 py-2 border border-transparent rounded-lg shadow-sm text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                <i class="fas fa-save mr-2"></i> Simpan Data
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Toggle sidebar on mobile
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('-translate-x-full');
+        });
+
+        document.getElementById('sidebarClose').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.add('-translate-x-full');
+        });
+
+        // Toggle user menu
+        document.getElementById('userMenuButton').addEventListener('click', function () {
+            document.getElementById('userMenu').classList.toggle('hidden');
+        });
+
+        // Close user menu when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('#userMenuButton') && !event.target.closest('#userMenu')) {
+                document.getElementById('userMenu').classList.add('hidden');
+            }
+        });
+
+        // Photo preview
+        document.getElementById('photoUpload').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            const previewPhoto = document.getElementById('previewPhoto');
+            const defaultPhotoIcon = document.getElementById('defaultPhotoIcon');
+
+            if (file) {
+                // Validasi ukuran file (maks 2MB)
+                if (file.size > 2 * 1024 * 1024) {
+                    alert('Ukuran file terlalu besar. Maksimal 2MB');
+                    this.value = ''; // Reset input file
+                    return;
+                }
+
+                // Validasi tipe file
+                if (!file.type.match('image.*')) {
+                    alert('Hanya file gambar yang diperbolehkan (JPG/PNG)');
+                    this.value = ''; // Reset input file
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    // Sembunyikan ikon default dan tampilkan gambar
+                    defaultPhotoIcon.classList.add('hidden');
+                    previewPhoto.src = event.target.result;
+                    previewPhoto.classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                // Jika tidak ada file, tampilkan ikon default
+                defaultPhotoIcon.classList.remove('hidden');
+                previewPhoto.classList.add('hidden');
+            }
+        });
+
+        // Competition category change handler
+        document.getElementById('competitionCategory').addEventListener('change', function () {
+            const subCategoryContainer = document.getElementById('subCategoryContainer');
+            const subCategorySelect = document.getElementById('subCategory');
+
+            // Clear existing options
+            subCategorySelect.innerHTML = '<option value="" disabled selected>Pilih sub kategori</option>';
+
+            if (this.value === 'tech-innovation') {
+                subCategoryContainer.classList.remove('hidden');
+                // Add tech innovation subcategories
+                const techSubcategories = [
+                    'Kecerdasan Buatan',
+                    'Internet of Things',
+                    'Blockchain',
+                    'Keamanan Siber',
+                    'Pengembangan Aplikasi'
+                ];
+                techSubcategories.forEach(sub => {
+                    const option = document.createElement('option');
+                    option.value = sub.toLowerCase().replace(/\s+/g, '-');
+                    option.textContent = sub;
+                    subCategorySelect.appendChild(option);
+                });
+            } else if (this.value === 'vocational-online' || this.value === 'vocational-offline') {
+                subCategoryContainer.classList.remove('hidden');
+                // Add vocational subcategories
+                const vocationalSubcategories = [
+                    'Desain Grafis',
+                    'Pemrograman Web',
+                    'Jaringan Komputer',
+                    'Multimedia',
+                    'Bisnis Digital'
+                ];
+                vocationalSubcategories.forEach(sub => {
+                    const option = document.createElement('option');
+                    option.value = sub.toLowerCase().replace(/\s+/g, '-');
+                    option.textContent = sub;
+                    subCategorySelect.appendChild(option);
+                });
+            } else {
+                subCategoryContainer.classList.add('hidden');
+            }
+        });
+
+        // Status change handler
+        document.getElementById('status').addEventListener('change', function () {
+            const rejectionReasonContainer = document.getElementById('rejectionReasonContainer');
+            if (this.value === 'rejected') {
+                rejectionReasonContainer.classList.remove('hidden');
+            } else {
+                rejectionReasonContainer.classList.add('hidden');
+            }
+        });
+
+        // Initialize date picker with reasonable defaults
+        document.getElementById('birthDate').valueAsDate = new Date(2000, 0, 1);
+    </script>
+</body>
+
+</html>
