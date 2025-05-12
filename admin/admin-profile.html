@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | AITeC 2025 Admin</title>
+    <title>Admin Profile | AITeC 2025 Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="../assets/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -30,7 +29,7 @@
 </head>
 
 <body class="bg-gray-100 font-sans">
-    <!-- Sidebar -->
+    <!-- sidebar -->
     <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50"
         id="sidebar">
         <div class="flex items-center justify-center h-16 bg-primary">
@@ -56,7 +55,7 @@
                 </div>
 
                 <a href="./dashboard.html"
-                    class="flex items-center px-6 py-3 text-primary bg-primary bg-opacity-10 border-r-4 border-primary">
+                    class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
                     <i class="fas fa-tachometer-alt mr-3"></i>
                     <span>Dashboard</span>
                 </a>
@@ -183,7 +182,7 @@
                     <button id="sidebarToggle" class="md:hidden text-gray-600 focus:outline-none mr-4">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
-                    <h1 class="text-xl font-semibold text-gray-800">Dashboard</h1>
+                    <h1 class="text-xl font-semibold text-gray-800">Profil Admin</h1>
                 </div>
                 <div class="flex items-center space-x-4">
                     <div class="relative">
@@ -205,139 +204,138 @@
 
         <!-- Content -->
         <main class="p-6">
-            <!-- Stats Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Total Peserta</p>
-                            <h3 class="text-2xl font-bold mt-1">1,248</h3>
-                            <p class="text-green-500 text-xs mt-2"><i class="fas fa-arrow-up mr-1"></i> 12% from last
-                                month</p>
-                        </div>
-                        <div class="bg-primary bg-opacity-10 p-3 rounded-full">
-                            <i class="fas fa-users text-primary text-xl"></i>
-                        </div>
-                    </div>
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <!-- Breadcrumb -->
+                <div class="px-6 py-4 border-b border-gray-200 bg-gray-50">
+                    <nav class="flex" aria-label="Breadcrumb">
+                        <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                            <li class="inline-flex items-center">
+                                <a href="./dashboard.html" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary">
+                                    <i class="fas fa-home mr-2"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li aria-current="page">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                    <span class="ml-2 text-sm font-medium text-primary">Profil Admin</span>
+                                </div>
+                            </li>
+                        </ol>
+                    </nav>
                 </div>
 
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Total Perguruan Tinggi</p>
-                            <h3 class="text-2xl font-bold mt-1">78</h3>
-                            <p class="text-green-500 text-xs mt-2"><i class="fas fa-arrow-up mr-1"></i> 5% from last
-                                year</p>
-                        </div>
-                        <div class="bg-accent1 bg-opacity-10 p-3 rounded-full">
-                            <i class="fas fa-university text-accent1 text-xl"></i>
-                        </div>
-                    </div>
-                </div>
+                <!-- Profile Content -->
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <!-- Left Column - Profile Picture -->
+                        <div class="w-full md:w-1/3">
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <div class="flex flex-col items-center">
+                                    <div class="relative mb-4">
+                                        <img id="profilePhoto" src="https://randomuser.me/api/portraits/men/32.jpg" 
+                                            alt="Profile Photo" class="w-32 h-32 rounded-full border-4 border-white shadow-md object-cover">
+                                        <label for="photoUpload" class="absolute bottom-1 right-1 bg-primary text-white rounded-full px-2 py-1 cursor-pointer hover:bg-opacity-90">
+                                            <i class="fas fa-camera text-sm"></i>
+                                            <input id="photoUpload" type="file" class="hidden" accept="image/*">
+                                        </label>
+                                    </div>
+                                    <h2 class="text-xl font-bold text-gray-800">Admin User</h2>
+                                    <p class="text-primary font-medium">Super Admin</p>
+                                    <div class="mt-2">
+                                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
+                                    </div>
+                                </div>
 
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Pending Verifikasi</p>
-                            <h3 class="text-2xl font-bold mt-1">42</h3>
-                            <p class="text-red-500 text-xs mt-2"><i class="fas fa-exclamation-circle mr-1"></i> Needs
-                                attention</p>
+                                <div class="mt-6 space-y-4">
+                                    <div>
+                                        <h3 class="text-sm font-medium text-gray-500">Statistik</h3>
+                                        <div class="mt-2 space-y-2">
+                                            <div class="flex justify-between">
+                                                <span class="text-gray-600">Bergabung</span>
+                                                <span class="font-medium">15 Jan 2023</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-gray-600">Terakhir Login</span>
+                                                <span class="font-medium">Hari ini, 08:45</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="bg-accent3 bg-opacity-10 p-3 rounded-full">
-                            <i class="fas fa-clock text-accent3 text-xl"></i>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Total Submission</p>
-                            <h3 class="text-2xl font-bold mt-1">356</h3>
-                            <p class="text-green-500 text-xs mt-2"><i class="fas fa-arrow-up mr-1"></i> 24% from last
-                                week</p>
-                        </div>
-                        <div class="bg-accent5 bg-opacity-10 p-3 rounded-full">
-                            <i class="fas fa-file-upload text-accent5 text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        <!-- Right Column - Profile Details -->
+                        <div class="w-full md:w-2/3">
+                            <div class="space-y-6">
+                                <!-- Personal Information -->
+                                <div>
+                                    <h3 class="text-lg font-medium text-gray-900 mb-4 flex items-center">
+                                        <i class="fas fa-user-circle mr-2 text-primary"></i>
+                                        Informasi Pribadi
+                                    </h3>
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <p class="text-sm text-gray-500">Nama Lengkap</p>
+                                                <p class="font-medium">Admin User</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm text-gray-500">Email</p>
+                                                <p class="font-medium">admin@aitec.id</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm text-gray-500">Nomor Telepon</p>
+                                                <p class="font-medium">+62 812-3456-7890</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm text-gray-500">Jenis Kelamin</p>
+                                                <p class="font-medium">Laki-laki</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-            <!-- Charts Row -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                <div class="bg-white rounded-lg shadow p-6">
-                    <h3 class="font-semibold text-gray-800 mb-4">Pendaftar per Bulan</h3>
-                    <div class="h-64">
-                        <canvas id="registrationsChart"></canvas>
-                    </div>
-                </div>
+                                <!-- Account Information -->
+                                <div>
+                                    <h3 class="text-lg font-medium text-gray-900 mb-4 flex items-center">
+                                        <i class="fas fa-shield-alt mr-2 text-primary"></i>
+                                        Informasi Akun
+                                    </h3>
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <p class="text-sm text-gray-500">Username</p>
+                                                <p class="font-medium">admin_user</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm text-gray-500">Role</p>
+                                                <p class="font-medium">Super Admin</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm text-gray-500">Status</p>
+                                                <p class="font-medium text-green-600">Aktif</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm text-gray-500">Terakhir Update Password</p>
+                                                <p class="font-medium">1 bulan yang lalu</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                <div class="bg-white rounded-lg shadow p-6">
-                    <h3 class="font-semibold text-gray-800 mb-4">Distribusi Kategori</h3>
-                    <div class="h-64">
-                        <canvas id="categoriesChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Recent Activity -->
-            <div class="bg-white rounded-lg shadow overflow-hidden mb-6">
-                <div class="px-6 py-4 border-b border-gray-200">
-                    <h3 class="font-semibold text-gray-800">Aktivitas Terkini</h3>
-                </div>
-                <div class="divide-y divide-gray-200">
-                    <div class="p-4 hover:bg-gray-50">
-                        <div class="flex items-start">
-                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-3">
-                                <i class="fas fa-user-plus text-primary text-sm"></i>
-                            </div>
-                            <div class="flex-1">
-                                <p class="text-sm"><span class="font-medium">Politeknik Negeri Jember</span>
-                                    mendaftarkan 5 peserta baru</p>
-                                <p class="text-xs text-gray-500 mt-1">2 jam yang lalu</p>
+                                <!-- Action Buttons -->
+                                <div class="flex justify-end space-x-3">
+                                    <a href="./dashboard.html" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 bg-white hover:bg-gray-50">
+                                        Kembali
+                                    </a>
+                                    <a href="./admin-settings.html" class="px-6 py-2 border border-transparent rounded-lg shadow-sm text-white bg-primary hover:bg-opacity-90">
+                                        <i class="fas fa-cog mr-2"></i> Pengaturan
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="p-4 hover:bg-gray-50">
-                        <div class="flex items-start">
-                            <div class="bg-accent1 bg-opacity-10 p-2 rounded-full mr-3">
-                                <i class="fas fa-file-upload text-accent1 text-sm"></i>
-                            </div>
-                            <div class="flex-1">
-                                <p class="text-sm"><span class="font-medium">Politeknik Negeri Bandung</span> mengunggah
-                                    proposal inovasi teknologi</p>
-                                <p class="text-xs text-gray-500 mt-1">5 jam yang lalu</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 hover:bg-gray-50">
-                        <div class="flex items-start">
-                            <div class="bg-accent5 bg-opacity-10 p-2 rounded-full mr-3">
-                                <i class="fas fa-check-circle text-accent5 text-sm"></i>
-                            </div>
-                            <div class="flex-1">
-                                <p class="text-sm"><span class="font-medium">Admin</span> menyetujui 3 pendaftaran
-                                    peserta</p>
-                                <p class="text-xs text-gray-500 mt-1">Kemarin, 15:32</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 hover:bg-gray-50">
-                        <div class="flex items-start">
-                            <div class="bg-accent3 bg-opacity-10 p-2 rounded-full mr-3">
-                                <i class="fas fa-video text-accent3 text-sm"></i>
-                            </div>
-                            <div class="flex-1">
-                                <p class="text-sm"><span class="font-medium">Politeknik Negeri Malang</span> mengunggah
-                                    video presentasi</p>
-                                <p class="text-xs text-gray-500 mt-1">Kemarin, 10:45</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-6 py-3 bg-gray-50 text-center">
-                    <a href="#" class="text-sm text-primary font-medium hover:underline">Lihat semua aktivitas</a>
                 </div>
             </div>
         </main>
@@ -366,71 +364,31 @@
             }
         });
 
-        // Registration Chart
-        const registrationsCtx = document.getElementById('registrationsChart').getContext('2d');
-        const registrationsChart = new Chart(registrationsCtx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
-                datasets: [{
-                    label: 'Pendaftar 2024',
-                    data: [45, 60, 75, 82, 78, 90, 105, 120, 135, 150, 180, 210],
-                    borderColor: '#F25922',
-                    backgroundColor: 'rgba(242, 89, 34, 0.1)',
-                    tension: 0.3,
-                    fill: true
-                }, {
-                    label: 'Pendaftar 2025',
-                    data: [65, 80, 95, 110, 125, 140, 155, 170, 185, 200, 220, 240],
-                    borderColor: '#44AED5',
-                    backgroundColor: 'rgba(68, 174, 213, 0.1)',
-                    tension: 0.3,
-                    fill: true
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+        // Photo upload functionality
+        document.getElementById('photoUpload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const profilePhoto = document.getElementById('profilePhoto');
+            
+            if (file) {
+                if (file.size > 2 * 1024 * 1024) {
+                    alert('Ukuran file terlalu besar. Maksimal 2MB');
+                    this.value = '';
+                    return;
                 }
-            }
-        });
-
-        // Categories Chart
-        const categoriesCtx = document.getElementById('categoriesChart').getContext('2d');
-        const categoriesChart = new Chart(categoriesCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Inovasi Teknologi', 'Kontes Vokasi Daring', 'Kontes Vokasi Luring'],
-                datasets: [{
-                    data: [45, 30, 25],
-                    backgroundColor: [
-                        '#F25922',
-                        '#44AED5',
-                        '#90BF2A'
-                    ],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'right',
-                    }
+                
+                if (!file.type.match('image.*')) {
+                    alert('Hanya file gambar yang diperbolehkan (JPG/PNG)');
+                    this.value = '';
+                    return;
                 }
+                
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    profilePhoto.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
             }
         });
     </script>
 </body>
-
 </html>

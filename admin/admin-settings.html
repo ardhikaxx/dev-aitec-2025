@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | AITeC 2025 Admin</title>
+    <title>Admin Settings | AITeC 2025 Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="../assets/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -30,7 +29,7 @@
 </head>
 
 <body class="bg-gray-100 font-sans">
-    <!-- Sidebar -->
+    <!-- sidebar -->
     <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50"
         id="sidebar">
         <div class="flex items-center justify-center h-16 bg-primary">
@@ -56,7 +55,7 @@
                 </div>
 
                 <a href="./dashboard.html"
-                    class="flex items-center px-6 py-3 text-primary bg-primary bg-opacity-10 border-r-4 border-primary">
+                    class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
                     <i class="fas fa-tachometer-alt mr-3"></i>
                     <span>Dashboard</span>
                 </a>
@@ -183,7 +182,7 @@
                     <button id="sidebarToggle" class="md:hidden text-gray-600 focus:outline-none mr-4">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
-                    <h1 class="text-xl font-semibold text-gray-800">Dashboard</h1>
+                    <h1 class="text-xl font-semibold text-gray-800">Pengaturan Admin</h1>
                 </div>
                 <div class="flex items-center space-x-4">
                     <div class="relative">
@@ -205,139 +204,150 @@
 
         <!-- Content -->
         <main class="p-6">
-            <!-- Stats Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Total Peserta</p>
-                            <h3 class="text-2xl font-bold mt-1">1,248</h3>
-                            <p class="text-green-500 text-xs mt-2"><i class="fas fa-arrow-up mr-1"></i> 12% from last
-                                month</p>
-                        </div>
-                        <div class="bg-primary bg-opacity-10 p-3 rounded-full">
-                            <i class="fas fa-users text-primary text-xl"></i>
-                        </div>
-                    </div>
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <!-- Breadcrumb -->
+                <div class="px-6 py-4 border-b border-gray-200 bg-gray-50">
+                    <nav class="flex" aria-label="Breadcrumb">
+                        <ol class="inline-flex items-center space-x-1 md:space-x-2">
+                            <li class="inline-flex items-center">
+                                <a href="./dashboard.html" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary">
+                                    <i class="fas fa-home mr-2"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <div class="flex items-center">
+                                    <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                    <a href="./admin-profile.html" class="ml-2 text-sm font-medium text-gray-700 hover:text-primary">Profil Admin</a>
+                                </div>
+                            </li>
+                            <li aria-current="page">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                    <span class="ml-2 text-sm font-medium text-primary">Pengaturan</span>
+                                </div>
+                            </li>
+                        </ol>
+                    </nav>
                 </div>
 
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Total Perguruan Tinggi</p>
-                            <h3 class="text-2xl font-bold mt-1">78</h3>
-                            <p class="text-green-500 text-xs mt-2"><i class="fas fa-arrow-up mr-1"></i> 5% from last
-                                year</p>
-                        </div>
-                        <div class="bg-accent1 bg-opacity-10 p-3 rounded-full">
-                            <i class="fas fa-university text-accent1 text-xl"></i>
-                        </div>
-                    </div>
-                </div>
+                <!-- Settings Content -->
+                <div class="p-6">
+                    <form>
+                        <div class="space-y-6">
+                            <!-- Account Settings -->
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900 mb-4 flex items-center">
+                                    <i class="fas fa-user-shield mr-2 text-primary"></i>
+                                    Pengaturan Akun
+                                </h3>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label for="username" class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+                                            <input type="text" id="username" name="username" value="admin_user" 
+                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        </div>
+                                        <div>
+                                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                            <input type="email" id="email" name="email" value="admin@aitec.id" 
+                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        </div>
+                                        <div>
+                                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon</label>
+                                            <input type="tel" id="phone" name="phone" value="081234567890" 
+                                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Pending Verifikasi</p>
-                            <h3 class="text-2xl font-bold mt-1">42</h3>
-                            <p class="text-red-500 text-xs mt-2"><i class="fas fa-exclamation-circle mr-1"></i> Needs
-                                attention</p>
-                        </div>
-                        <div class="bg-accent3 bg-opacity-10 p-3 rounded-full">
-                            <i class="fas fa-clock text-accent3 text-xl"></i>
-                        </div>
-                    </div>
-                </div>
+                            <!-- Security Settings -->
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900 mb-4 flex items-center">
+                                    <i class="fas fa-lock mr-2 text-primary"></i>
+                                    Keamanan
+                                </h3>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="space-y-4">
+                                        <div>
+                                            <label for="currentPassword" class="block text-sm font-medium text-gray-700 mb-1">Password Saat Ini</label>
+                                            <div class="relative">
+                                                <input type="password" id="currentPassword" name="currentPassword" 
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                                <button type="button" class="absolute right-3 top-2 text-gray-400 hover:text-gray-600 toggle-password">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="newPassword" class="block text-sm font-medium text-gray-700 mb-1">Password Baru</label>
+                                            <div class="relative">
+                                                <input type="password" id="newPassword" name="newPassword" 
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                                <button type="button" class="absolute right-3 top-2 text-gray-400 hover:text-gray-600 toggle-password">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                            <p class="text-xs text-gray-500 mt-1">Minimal 8 karakter, mengandung huruf besar, kecil, dan angka</p>
+                                        </div>
+                                        <div>
+                                            <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Konfirmasi Password Baru</label>
+                                            <div class="relative">
+                                                <input type="password" id="confirmPassword" name="confirmPassword" 
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                                <button type="button" class="absolute right-3 top-2 text-gray-400 hover:text-gray-600 toggle-password">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-500 text-sm">Total Submission</p>
-                            <h3 class="text-2xl font-bold mt-1">356</h3>
-                            <p class="text-green-500 text-xs mt-2"><i class="fas fa-arrow-up mr-1"></i> 24% from last
-                                week</p>
-                        </div>
-                        <div class="bg-accent5 bg-opacity-10 p-3 rounded-full">
-                            <i class="fas fa-file-upload text-accent5 text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            <!-- Notification Settings -->
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900 mb-4 flex items-center">
+                                    <i class="fas fa-bell mr-2 text-primary"></i>
+                                    Notifikasi
+                                </h3>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="space-y-3">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <p class="font-medium">Email Notifikasi</p>
+                                                <p class="text-sm text-gray-500">Dapatkan pemberitahuan via email</p>
+                                            </div>
+                                            <label class="relative inline-flex items-center cursor-pointer">
+                                                <input type="checkbox" checked class="sr-only peer">
+                                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                            </label>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <p class="font-medium">Notifikasi Sistem</p>
+                                                <p class="text-sm text-gray-500">Tampilkan notifikasi di dashboard</p>
+                                            </div>
+                                            <label class="relative inline-flex items-center cursor-pointer">
+                                                <input type="checkbox" checked class="sr-only peer">
+                                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-            <!-- Charts Row -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                <div class="bg-white rounded-lg shadow p-6">
-                    <h3 class="font-semibold text-gray-800 mb-4">Pendaftar per Bulan</h3>
-                    <div class="h-64">
-                        <canvas id="registrationsChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow p-6">
-                    <h3 class="font-semibold text-gray-800 mb-4">Distribusi Kategori</h3>
-                    <div class="h-64">
-                        <canvas id="categoriesChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Recent Activity -->
-            <div class="bg-white rounded-lg shadow overflow-hidden mb-6">
-                <div class="px-6 py-4 border-b border-gray-200">
-                    <h3 class="font-semibold text-gray-800">Aktivitas Terkini</h3>
-                </div>
-                <div class="divide-y divide-gray-200">
-                    <div class="p-4 hover:bg-gray-50">
-                        <div class="flex items-start">
-                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-3">
-                                <i class="fas fa-user-plus text-primary text-sm"></i>
-                            </div>
-                            <div class="flex-1">
-                                <p class="text-sm"><span class="font-medium">Politeknik Negeri Jember</span>
-                                    mendaftarkan 5 peserta baru</p>
-                                <p class="text-xs text-gray-500 mt-1">2 jam yang lalu</p>
+                            <!-- Action Buttons -->
+                            <div class="flex justify-end space-x-3">
+                                <button type="button" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 bg-white hover:bg-gray-50">
+                                    Batal
+                                </button>
+                                <button type="submit" class="px-6 py-2 border border-transparent rounded-lg shadow-sm text-white bg-primary hover:bg-opacity-90">
+                                    <i class="fas fa-save mr-2"></i> Simpan Perubahan
+                                </button>
                             </div>
                         </div>
-                    </div>
-                    <div class="p-4 hover:bg-gray-50">
-                        <div class="flex items-start">
-                            <div class="bg-accent1 bg-opacity-10 p-2 rounded-full mr-3">
-                                <i class="fas fa-file-upload text-accent1 text-sm"></i>
-                            </div>
-                            <div class="flex-1">
-                                <p class="text-sm"><span class="font-medium">Politeknik Negeri Bandung</span> mengunggah
-                                    proposal inovasi teknologi</p>
-                                <p class="text-xs text-gray-500 mt-1">5 jam yang lalu</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 hover:bg-gray-50">
-                        <div class="flex items-start">
-                            <div class="bg-accent5 bg-opacity-10 p-2 rounded-full mr-3">
-                                <i class="fas fa-check-circle text-accent5 text-sm"></i>
-                            </div>
-                            <div class="flex-1">
-                                <p class="text-sm"><span class="font-medium">Admin</span> menyetujui 3 pendaftaran
-                                    peserta</p>
-                                <p class="text-xs text-gray-500 mt-1">Kemarin, 15:32</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 hover:bg-gray-50">
-                        <div class="flex items-start">
-                            <div class="bg-accent3 bg-opacity-10 p-2 rounded-full mr-3">
-                                <i class="fas fa-video text-accent3 text-sm"></i>
-                            </div>
-                            <div class="flex-1">
-                                <p class="text-sm"><span class="font-medium">Politeknik Negeri Malang</span> mengunggah
-                                    video presentasi</p>
-                                <p class="text-xs text-gray-500 mt-1">Kemarin, 10:45</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-6 py-3 bg-gray-50 text-center">
-                    <a href="#" class="text-sm text-primary font-medium hover:underline">Lihat semua aktivitas</a>
+                    </form>
                 </div>
             </div>
         </main>
@@ -366,71 +376,20 @@
             }
         });
 
-        // Registration Chart
-        const registrationsCtx = document.getElementById('registrationsChart').getContext('2d');
-        const registrationsChart = new Chart(registrationsCtx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
-                datasets: [{
-                    label: 'Pendaftar 2024',
-                    data: [45, 60, 75, 82, 78, 90, 105, 120, 135, 150, 180, 210],
-                    borderColor: '#F25922',
-                    backgroundColor: 'rgba(242, 89, 34, 0.1)',
-                    tension: 0.3,
-                    fill: true
-                }, {
-                    label: 'Pendaftar 2025',
-                    data: [65, 80, 95, 110, 125, 140, 155, 170, 185, 200, 220, 240],
-                    borderColor: '#44AED5',
-                    backgroundColor: 'rgba(68, 174, 213, 0.1)',
-                    tension: 0.3,
-                    fill: true
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+        // Toggle password visibility
+        document.querySelectorAll('.toggle-password').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                const icon = this.querySelector('i');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.replace('fa-eye', 'fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.replace('fa-eye-slash', 'fa-eye');
                 }
-            }
-        });
-
-        // Categories Chart
-        const categoriesCtx = document.getElementById('categoriesChart').getContext('2d');
-        const categoriesChart = new Chart(categoriesCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Inovasi Teknologi', 'Kontes Vokasi Daring', 'Kontes Vokasi Luring'],
-                datasets: [{
-                    data: [45, 30, 25],
-                    backgroundColor: [
-                        '#F25922',
-                        '#44AED5',
-                        '#90BF2A'
-                    ],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'right',
-                    }
-                }
-            }
+            });
         });
     </script>
 </body>
-
 </html>
