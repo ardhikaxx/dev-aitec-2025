@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juara Umum AITeC 6 - AITeC 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="../assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F25922',
+                        secondary: '#F22727',
+                        accent1: '#90BF2A',
+                        accent2: '#509625',
+                        accent3: '#FEBF0F',
+                        accent4: '#FC9804',
+                        accent5: '#44AED5',
+                        accent6: '#0C339A',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .article-content img {
+            border-radius: 0.5rem;
+            margin: 2rem auto;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: #1f2937;
+        }
+
+        .article-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            color: #1f2937;
+        }
+
+        .article-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ol {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #F25922;
+            padding-left: 1rem;
+            font-style: italic;
+            color: #4b5563;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../index.html">
+                            <img class="h-11 md:h-14 w-auto" src="../assets/logo-navbar.png" alt="AITeC Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="../index.html#welcome"
+                        class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Sambutan</a>
+                    <a href="../index.html#timeline"
+                        class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Timeline</a>
+                    <a href="../index.html#categories"
+                        class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Kategori</a>
+                    <a href="../index.html#news" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Berita</a>
+                    <a href="../index.html#gallery"
+                        class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Gallery</a>
+                    <a href="../auth/login.html"
+                        class="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition">Login</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-900 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Home</a>
+                <a href="../index.html#welcome"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Sambutan</a>
+                <a href="../index.html#timeline"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Timeline</a>
+                <a href="../index.html#categories"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Kategori</a>
+                <a href="../index.html#news"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Berita</a>
+                <a href="../index.html#gallery"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Gallery</a>
+                <a href="../auth/login.html"
+                    class="block w-full text-center bg-primary text-white px-6 py-2 rounded-full text-base font-medium hover:bg-opacity-90 transition mt-2">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- News Detail Section -->
+    <section class="pt-32 pb-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <span class="inline-block px-3 py-1 bg-primary text-white text-xs font-semibold rounded-full mb-4">21 Oktober 2024</span>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Juara Umum Agricultural Innovation Technology Competition 6 Tahun 2024</h1>
+                
+                <div class="flex items-center mb-8">
+                    <div class="flex-shrink-0">
+                        <img class="h-10 w-10 rounded-full" src="../assets/foto/tim-polije.png" alt="Penulis">
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-gray-900">Tim Media AITeC</p>
+                        <div class="flex space-x-1 text-sm text-gray-500">
+                            <span>Politeknik Negeri Jember</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-10">
+                <img src="../assets/foto/polinela_juara_umum_aitec6_2024.jpg" alt="Juara Umum AITeC 6" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+
+            <div class="article-content text-gray-700">
+                <p class="text-lg font-medium mb-6 text-gray-800">
+                    Peringkat ke dua, diraih oleh Politeknik Negeri Jember (Polije), yang mampu membawa pulang 11 kategori juara. Peringkat ke tiga diraih oleh Politeknik Pertanian Negeri Payakumbuh dengan raihan 2 kategori juara.
+                </p>
+
+                <p>
+                    Kegiatan yang diselenggarakan di Polinela merupakan tahap Final AITeC, dimana sebelumnya telah dilaksanakan fase-fase penyisihan yang diselenggarakan di politeknik masing-masing. Format penilaian untuk menentukan juara umum sudah disepakati dan menjadi kesepakatan bersama oleh PTV peserta, dewan juri dan BAKORMA (Badan Koordinasi Kemahasiswaan) forum wakil direktur bidang kemahasiswaan Politeknik Se Indonesia.
+                </p>
+
+                <h2>Prestasi yang Membanggakan</h2>
+                <p>
+                    Prestasi ini merupakan bukti nyata dari komitmen Polinela dalam mengembangkan bakat dan potensi mahasiswa di bidang teknologi pertanian. Dengan raihan 16 kategori juara, Polinela berhasil mengungguli peserta dari politeknik lainnya yang turut berkompetisi dalam ajang bergengsi ini.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-lg text-primary mb-3">Juara 1</h3>
+                        <p class="text-gray-700">Politeknik Negeri Lampung (Polinela) - 16 kategori juara</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-lg text-primary mb-3">Juara 2</h3>
+                        <p class="text-gray-700">Politeknik Negeri Jember (Polije) - 11 kategori juara</p>
+                    </div>
+                </div>
+
+                <h2>Proses Penilaian yang Ketat</h2>
+                <p>
+                    Format penilaian untuk menentukan juara umum telah disepakati bersama oleh seluruh peserta, dewan juri, dan BAKORMA. Proses penilaian dilakukan secara transparan dan objektif dengan mempertimbangkan berbagai aspek, termasuk:
+                </p>
+
+                <ul>
+                    <li>Kualitas inovasi teknologi yang dihasilkan</li>
+                    <li>Kemampuan presentasi dan komunikasi</li>
+                    <li>Kesesuaian dengan tema kompetisi</li>
+                    <li>Potensi implementasi di dunia nyata</li>
+                    <li>Dokumentasi dan pelaporan</li>
+                </ul>
+
+                <blockquote>
+                    "Kemenangan ini adalah hasil dari kerja keras tim dan dukungan penuh dari seluruh civitas akademika Polinela. Kami berkomitmen untuk terus mengembangkan inovasi di bidang teknologi pertanian."
+                </blockquote>
+
+                <h2>Menyongsong AITeC VII 2025</h2>
+                <p>
+                    Dengan berakhirnya AITeC VI di Polinela, estafet penyelenggaraan kini beralih ke Politeknik Negeri Jember untuk AITeC VII tahun 2025. Panitia dari Polije telah mulai mempersiapkan segala kebutuhan untuk menyambut peserta dari seluruh Indonesia.
+                </p>
+
+                <p>
+                    "Kami akan berusaha memberikan yang terbaik dan melanjutkan kesuksesan AITeC sebelumnya. Target kami adalah menjadikan AITeC VII sebagai ajang yang lebih besar dan lebih berkualitas," ujar perwakilan panitia AITeC VII dari Polije.
+                </p>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-6">Berita Terkait</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="./news-detail-2.html" class="group">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-24 h-24 rounded-lg overflow-hidden">
+                                <img src="../assets/foto/pembukaan_aitec6_polinela_2024_2.png" alt="Related News" class="w-full h-full object-cover group-hover:opacity-90 transition">
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-base font-medium text-gray-900 group-hover:text-primary transition">Polinela Tuan Rumah Agricultural Innovation Technology Competition AITeC VI</h4>
+                                <p class="mt-1 text-sm text-gray-500">15 Okt 2024</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./news-detail-3.html" class="group">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-24 h-24 rounded-lg overflow-hidden">
+                                <img src="../assets/foto/pembukaan_aitec6_polinela_2024_3.jpg" alt="Related News" class="w-full h-full object-cover group-hover:opacity-90 transition">
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-base font-medium text-gray-900 group-hover:text-primary transition">Polinela Tuan Rumah AITeC VI, Menyongsong Inovasi Pertanian Masa Depan</h4>
+                                <p class="mt-1 text-sm text-gray-500">1 Agu 2024</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2 flex justify-content-start flex-col items-start">
+                    <img src="../assets/logo-footer.png" alt="AITeC Logo" class="h-13 md:h-20 w-auto mb-4">
+                    <p class="text-gray-400 mb-4">
+                        Agricultural Innovation Technology Competition (AITeC) merupakan kompetisi tahunan di bidang
+                        pertanian yang diikuti oleh Politeknik seluruh Indonesia di bidang pertanian.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="../index.html#news" class="text-gray-400 hover:text-white transition">Berita</a></li>
+                        <li><a href="../index.html#welcome" class="text-gray-400 hover:text-white transition">Sambutan</a></li>
+                        <li><a href="../index.html#timeline" class="text-gray-400 hover:text-white transition">Timeline</a></li>
+                        <li><a href="../index.html#categories" class="text-gray-400 hover:text-white transition">Kategori</a></li>
+                        <li><a href="../index.html#gallery" class="text-gray-400 hover:text-white transition">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Kontak Kami</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>Jl. Mastrip, Krajan Timur, Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur
+                                68121</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                            <span>+62 331 333533</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-fax mr-3 text-primary"></i>
+                            <span>+62 331 333531</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>politeknik@polije.ac.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    &copy; 2025 AITeC Politeknik Negeri Jember. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 bg-primary text-white px-5 py-4 rounded-full shadow-lg opacity-0 invisible transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const offset = 80; // Adjust for fixed header
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

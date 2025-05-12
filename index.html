@@ -111,7 +111,7 @@
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
                         <a href="./index.html">
-                            <img class="h-12 md:h-16 w-auto" src="./assets/logo-navbar.png" alt="AITeC Logo">
+                            <img class="h-11 md:h-14 w-auto" src="./assets/logo-navbar.png" alt="AITeC Logo">
                         </a>
                     </div>
                 </div>
@@ -123,6 +123,7 @@
                         class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Timeline</a>
                     <a href="#categories"
                         class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Kategori</a>
+                    <a href="#news" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Berita</a>
                     <a href="#gallery"
                         class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Gallery</a>
                     <a href="./auth/login.html"
@@ -150,11 +151,12 @@
                     class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Timeline</a>
                 <a href="#categories"
                     class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Kategori</a>
+                <a href="#news"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Berita</a>
                 <a href="#gallery"
                     class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Gallery</a>
-                <a href="#"
-                    class="block w-full text-center bg-primary text-white px-6 py-2 rounded-full text-base font-medium hover:bg-opacity-90 transition mt-2">Daftar
-                    Sekarang</a>
+                <a href="./auth/login.html"
+                    class="block w-full text-center bg-primary text-white px-6 py-2 rounded-full text-base font-medium hover:bg-opacity-90 transition mt-2">Login</a>
             </div>
         </div>
     </nav>
@@ -769,6 +771,140 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Berita Terkini</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News Card 1 -->
+                <a href="./page/news-detail-1.html" class="group">
+                    <div
+                        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 h-full flex flex-col">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="./assets/foto/polinela_juara_umum_aitec6_2024.jpg" alt="Juara Umum AITeC 6"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div
+                                class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                                21 Okt 2024
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition">
+                                    Juara Umum Agricultural Innovation Technology Competition 6 Tahun 2024</h3>
+                                <p class="text-gray-600 mb-4 line-clamp-3">
+                                    Peringkat ke dua, diraih oleh Politeknik Negeri Jember (Polije), yang mampu membawa
+                                    pulang 11 kategori juara. Peringkat ke tiga diraih oleh Politeknik Pertanian Negeri
+                                    Payakumbuh dengan raihan 2 kategori juara...
+                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <span class="inline-flex items-center text-primary font-medium group-hover:underline">
+                                    Baca selengkapnya
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- News Card 2 -->
+                <a href="./page/news-detail-2.html" class="group">
+                    <div
+                        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 h-full flex flex-col">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="./assets/foto/pembukaan_aitec6_polinela_2024_2.png"
+                                alt="Polinela Tuan Rumah AITeC"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div
+                                class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                                15 Okt 2024
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition">
+                                    Polinela Tuan Rumah Agricultural Innovation Technology Competition AITeC VI</h3>
+                                <p class="text-gray-600 mb-4 line-clamp-3">
+                                    Politeknik Negeri Lampung (Polinela) menjadi tuan rumah Agricultural Innovation
+                                    Technology Competition (AITeC) ke-6, yang akan diselenggarakan pada tanggal 23
+                                    hingga 26 Oktober 2024 mendatang...
+                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <span class="inline-flex items-center text-primary font-medium group-hover:underline">
+                                    Baca selengkapnya
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- News Card 3 -->
+                <a href="./page/news-detail-3.html" class="group">
+                    <div
+                        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 h-full flex flex-col">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="./assets/foto/pembukaan_aitec6_polinela_2024_3.jpg"
+                                alt="AITeC VI Inovasi Pertanian"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div
+                                class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                                1 Agu 2024
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition">
+                                    Polinela Tuan Rumah AITeC VI, Menyongsong Inovasi Pertanian Masa Depan</h3>
+                                <p class="text-gray-600 mb-4 line-clamp-3">
+                                    Ketua Bakorma Lingkup Vokasi se-Indonesia, Wahyu Kurnia Dewanto, S. Kom, M.T., Dalam
+                                    sambutannya, beliau menggarisbawahi peran penting inovasi teknologi pertanian dalam
+                                    memajukan sektor pertanian di Indonesia...
+                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <span class="inline-flex items-center text-primary font-medium group-hover:underline">
+                                    Baca selengkapnya
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#"
+                    class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-primary hover:bg-opacity-90">
+                    Lihat Berita Lainnya
+                    <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
