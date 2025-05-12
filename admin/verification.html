@@ -27,7 +27,8 @@
 </head>
 <body class="bg-gray-100 font-sans">
     <!-- Sidebar -->
-    <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50" id="sidebar">
+    <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50"
+        id="sidebar">
         <div class="flex items-center justify-center h-16 bg-primary">
             <div class="flex items-center space-x-2">
                 <img src="../assets/logo/logotype-h-white.png" class="h-10 md:h-11 w-auto" alt="AITeC Logo">
@@ -36,87 +37,143 @@
         <div class="overflow-y-auto h-full py-4">
             <div class="px-4 py-2">
                 <div class="flex items-center space-x-3 p-3 bg-accent1 bg-opacity-10 rounded-lg">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="w-10 h-10 rounded-full">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin"
+                        class="w-10 h-10 rounded-full">
                     <div>
                         <p class="font-medium">Admin User</p>
                         <p class="text-xs text-gray-500">Super Admin</p>
                     </div>
                 </div>
             </div>
-            
+
             <nav class="mt-6">
                 <div class="px-4">
                     <p class="text-xs uppercase text-gray-500 font-medium mb-4">Main Menu</p>
                 </div>
-                
-                <a href="dashboard.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+
+                <a href="./dashboard.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
                     <i class="fas fa-tachometer-alt mr-3"></i>
                     <span>Dashboard</span>
                 </a>
-                
-                <a href="participants.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+
+                <a href="./participants.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
                     <i class="fas fa-users mr-3"></i>
                     <span>Data Peserta</span>
                 </a>
-                
+
                 <div class="group">
                     <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
                         <div class="flex items-center">
                             <i class="fas fa-trophy mr-3"></i>
                             <span>Daftar Kompetisi</span>
                         </div>
-                        <i class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                        <i
+                            class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
                     </button>
-                    <div class="hidden group-hover:block hover:block">
-                        <a href="competitions/" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
-                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
-                            <span>Inovasi Teknologi</span>
+                    <div class="hidden group-hover:block">
+                        <a href="./competitions/index.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-medal mr-3"></i>
+                            Daftar Kompetisi
                         </a>
-                        <a href="competitions/" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
-                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
-                            <span>Kontes Vokasi</span>
-                        </a>
+
+                        <!-- Menu Inovasi Teknologi dengan submenu -->
+                        <div class="group/tech relative">
+                            <button
+                                class="flex items-center justify-between w-full px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-bolt mr-3"></i>
+                                    <span>Inovasi Teknologi</span>
+                                </div>
+                                <i
+                                    class="fas fa-chevron-down text-xs transform group-hover/tech:rotate-180 transition duration-200"></i>
+                            </button>
+                            <div class="hidden group-hover/tech:block ml-4 pl-2 border-l-2 border-gray-200">
+                                <a href="./competitions/tech-innovation/proposals.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Proposal</span>
+                                </a>
+                                <a href="./competitions/tech-innovation/videos.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Video Submission</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Menu Kontes Vokasi dengan submenu -->
+                        <div class="group/vokasi relative">
+                            <button
+                                class="flex items-center justify-between w-full px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-graduation-cap mr-3"></i>
+                                    <span>Kontes Vokasi</span>
+                                </div>
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </button>
+                            <div class="hidden group-hover/vokasi:block ml-4 pl-2 border-l-2 border-gray-200">
+                                <a href="./competitions/vokasi-contest/online.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Daring</span>
+                                </a>
+                                <a href="./competitions/vokasi-contest/offline.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Luring</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
+
                 <div class="group">
                     <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
                         <div class="flex items-center">
                             <i class="fas fa-photo-video mr-3"></i>
                             <span>Media</span>
                         </div>
-                        <i class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                        <i
+                            class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
                     </button>
                     <div class="hidden group-hover:block hover:block">
-                        <a href="media/news.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                        <a href="./media/news.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
                             <i class="fas fa-chevron-right mr-2 text-xs"></i>
                             <span>News</span>
                         </a>
-                        <a href="media/gallery.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                        <a href="./media/gallery.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
                             <i class="fas fa-chevron-right mr-2 text-xs"></i>
                             <span>Gallery</span>
                         </a>
-                        <a href="media/greetings.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                        <a href="./media/greetings.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
                             <i class="fas fa-chevron-right mr-2 text-xs"></i>
                             <span>Sambutan</span>
                         </a>
                     </div>
                 </div>
-                
-                <a href="universities.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+
+                <a href="./universities.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
                     <i class="fas fa-university mr-3"></i>
                     <span>Data Perguruan Tinggi</span>
                 </a>
-                
-                <a href="committees.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+
+                <a href="./committees.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
                     <i class="fas fa-user-tie mr-3"></i>
                     <span>Data Panitia</span>
                 </a>
-                
-                <a href="verification.html" class="flex items-center px-6 py-3 text-primary bg-primary bg-opacity-10 border-r-4 border-primary">
+
+                <a href="./verification.html" class="flex items-center px-6 py-3 text-primary bg-primary bg-opacity-10 border-r-4 border-primary">
                     <i class="fas fa-check-circle mr-3"></i>
                     <span>Verifikasi</span>
                 </a>
+
+                <!-- Mobile close button - visible only on mobile -->
+                <div class="md:hidden px-6 py-3 mt-4 flex justify-center">
+                    <button id="sidebarClose"
+                        class="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full text-gray-600 hover:bg-gray-300 transition-colors duration-200">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
             </nav>
         </div>
     </div>
@@ -423,6 +480,10 @@
         // Toggle sidebar on mobile
         document.getElementById('sidebarToggle').addEventListener('click', function() {
             document.getElementById('sidebar').classList.toggle('-translate-x-full');
+        });
+
+        document.getElementById('sidebarClose').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.add('-translate-x-full');
         });
 
         // Toggle user menu

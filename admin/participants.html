@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,9 +26,11 @@
         }
     </script>
 </head>
+
 <body class="bg-gray-100 font-sans">
     <!-- Sidebar -->
-     <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50" id="sidebar">
+    <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50"
+        id="sidebar">
         <div class="flex items-center justify-center h-16 bg-primary">
             <div class="flex items-center space-x-2">
                 <img src="../assets/logo/logotype-h-white.png" class="h-10 md:h-11 w-auto" alt="AITeC Logo">
@@ -36,87 +39,144 @@
         <div class="overflow-y-auto h-full py-4">
             <div class="px-4 py-2">
                 <div class="flex items-center space-x-3 p-3 bg-accent1 bg-opacity-10 rounded-lg">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="w-10 h-10 rounded-full">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin"
+                        class="w-10 h-10 rounded-full">
                     <div>
                         <p class="font-medium">Admin User</p>
                         <p class="text-xs text-gray-500">Super Admin</p>
                     </div>
                 </div>
             </div>
-            
+
             <nav class="mt-6">
                 <div class="px-4">
                     <p class="text-xs uppercase text-gray-500 font-medium mb-4">Main Menu</p>
                 </div>
-                
-                <a href="dashboard.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+
+                <a href="./dashboard.html"
+                    class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
                     <i class="fas fa-tachometer-alt mr-3"></i>
                     <span>Dashboard</span>
                 </a>
-                
-                <a href="participants.html" class="flex items-center px-6 py-3 text-primary bg-primary bg-opacity-10 border-r-4 border-primary">
+
+                <a href="./participants.html" class="flex items-center px-6 py-3 text-primary bg-primary bg-opacity-10 border-r-4 border-primary text-gray-600 hover:bg-gray-100">
                     <i class="fas fa-users mr-3"></i>
                     <span>Data Peserta</span>
                 </a>
-                
+
                 <div class="group">
                     <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
                         <div class="flex items-center">
                             <i class="fas fa-trophy mr-3"></i>
                             <span>Daftar Kompetisi</span>
                         </div>
-                        <i class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                        <i
+                            class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
                     </button>
-                    <div class="hidden group-hover:block hover:block">
-                        <a href="competitions/" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
-                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
-                            <span>Inovasi Teknologi</span>
+                    <div class="hidden group-hover:block">
+                        <a href="./competitions/index.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-medal mr-3"></i>
+                            Daftar Kompetisi
                         </a>
-                        <a href="competitions/" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
-                            <i class="fas fa-chevron-right mr-2 text-xs"></i>
-                            <span>Kontes Vokasi</span>
-                        </a>
+
+                        <!-- Menu Inovasi Teknologi dengan submenu -->
+                        <div class="group/tech relative">
+                            <button
+                                class="flex items-center justify-between w-full px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-bolt mr-3"></i>
+                                    <span>Inovasi Teknologi</span>
+                                </div>
+                                <i
+                                    class="fas fa-chevron-down text-xs transform group-hover/tech:rotate-180 transition duration-200"></i>
+                            </button>
+                            <div class="hidden group-hover/tech:block ml-4 pl-2 border-l-2 border-gray-200">
+                                <a href="./competitions/tech-innovation/proposals.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Proposal</span>
+                                </a>
+                                <a href="./competitions/tech-innovation/videos.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Video Submission</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Menu Kontes Vokasi dengan submenu -->
+                        <div class="group/vokasi relative">
+                            <button
+                                class="flex items-center justify-between w-full px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-graduation-cap mr-3"></i>
+                                    <span>Kontes Vokasi</span>
+                                </div>
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </button>
+                            <div class="hidden group-hover/vokasi:block ml-4 pl-2 border-l-2 border-gray-200">
+                                <a href="./competitions/vokasi-contest/online.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Daring</span>
+                                </a>
+                                <a href="./competitions/vokasi-contest/offline.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Luring</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
+
                 <div class="group">
                     <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
                         <div class="flex items-center">
                             <i class="fas fa-photo-video mr-3"></i>
                             <span>Media</span>
                         </div>
-                        <i class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                        <i
+                            class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
                     </button>
                     <div class="hidden group-hover:block hover:block">
-                        <a href="media/news.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                        <a href="./media/news.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
                             <i class="fas fa-chevron-right mr-2 text-xs"></i>
                             <span>News</span>
                         </a>
-                        <a href="media/gallery.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                        <a href="./media/gallery.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
                             <i class="fas fa-chevron-right mr-2 text-xs"></i>
                             <span>Gallery</span>
                         </a>
-                        <a href="media/greetings.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                        <a href="./media/greetings.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
                             <i class="fas fa-chevron-right mr-2 text-xs"></i>
                             <span>Sambutan</span>
                         </a>
                     </div>
                 </div>
-                
-                <a href="universities.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+
+                <a href="./universities.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
                     <i class="fas fa-university mr-3"></i>
                     <span>Data Perguruan Tinggi</span>
                 </a>
-                
-                <a href="committees.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+
+                <a href="./committees.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
                     <i class="fas fa-user-tie mr-3"></i>
                     <span>Data Panitia</span>
                 </a>
-                
-                <a href="verification.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+
+                <a href="./verification.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
                     <i class="fas fa-check-circle mr-3"></i>
                     <span>Verifikasi</span>
                 </a>
+
+                <!-- Mobile close button - visible only on mobile -->
+                <div class="md:hidden px-6 py-3 mt-4 flex justify-center">
+                    <button id="sidebarClose"
+                        class="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full text-gray-600 hover:bg-gray-300 transition-colors duration-200">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
             </nav>
         </div>
     </div>
@@ -135,14 +195,17 @@
                 <div class="flex items-center space-x-4">
                     <div class="relative">
                         <button id="userMenuButton" class="flex items-center focus:outline-none">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="w-8 h-8 rounded-full">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin"
+                                class="w-8 h-8 rounded-full">
                             <span class="ml-2 text-gray-700 hidden md:inline">Admin</span>
                             <i class="fas fa-chevron-down ml-1 text-xs text-gray-600"></i>
                         </button>
-                        <div id="userMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                        <div id="userMenu"
+                            class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
-                            <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                            <a href="index.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -152,29 +215,44 @@
         <!-- Content -->
         <main class="p-6">
             <div class="bg-white rounded-lg shadow overflow-hidden">
-                <div class="px-6 py-4 border-b border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between">
+                <div
+                    class="px-6 py-4 border-b border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between">
                     <h3 class="font-semibold text-gray-800 mb-2 md:mb-0">Daftar Peserta AITeC 2025</h3>
                     <div class="flex items-center space-x-2">
                         <div class="relative">
-                            <input type="text" placeholder="Cari peserta..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <input type="text" placeholder="Cari peserta..."
+                                class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                             <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
                         </div>
-                        <button class="bg-primary hover:bg-opacity-90 text-white px-4 py-2 rounded-lg flex items-center">
+                        <button
+                            class="bg-primary hover:bg-opacity-90 text-white px-4 py-2 rounded-lg flex items-center">
                             <i class="fas fa-plus mr-2"></i> Tambah
                         </button>
                     </div>
                 </div>
-                
+
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
                             <tr>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Perguruan Tinggi</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    No</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Nama</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Perguruan Tinggi</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Kategori</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Status</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -183,7 +261,8 @@
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
-                                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/42.jpg" alt="">
+                                            <img class="h-10 w-10 rounded-full"
+                                                src="https://randomuser.me/api/portraits/women/42.jpg" alt="">
                                         </div>
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900">Dewi Sartika</div>
@@ -191,17 +270,24 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Jember</td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent1 bg-opacity-20 text-accent1">Inovasi Teknologi</span>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Jember
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent1 bg-opacity-20 text-accent1">Inovasi
+                                        Teknologi</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                    <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
-                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i class="fas fa-edit"></i></button>
-                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-trash"></i></button>
+                                    <button class="text-primary hover:text-opacity-80 mr-3"><i
+                                            class="fas fa-eye"></i></button>
+                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i
+                                            class="fas fa-edit"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i
+                                            class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-50">
@@ -209,7 +295,8 @@
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
-                                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                                            <img class="h-10 w-10 rounded-full"
+                                                src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
                                         </div>
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900">Budi Santoso</div>
@@ -217,17 +304,24 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Bandung</td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent5 bg-opacity-20 text-accent5">Kontes Vokasi Daring</span>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Bandung
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Pending</span>
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent5 bg-opacity-20 text-accent5">Kontes
+                                        Vokasi Daring</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Pending</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                    <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
-                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i class="fas fa-edit"></i></button>
-                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-trash"></i></button>
+                                    <button class="text-primary hover:text-opacity-80 mr-3"><i
+                                            class="fas fa-eye"></i></button>
+                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i
+                                            class="fas fa-edit"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i
+                                            class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-50">
@@ -235,7 +329,8 @@
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
-                                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/63.jpg" alt="">
+                                            <img class="h-10 w-10 rounded-full"
+                                                src="https://randomuser.me/api/portraits/women/63.jpg" alt="">
                                         </div>
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900">Rina Wijaya</div>
@@ -243,17 +338,24 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Malang</td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent3 bg-opacity-20 text-accent3">Kontes Vokasi Luring</span>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Malang
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent3 bg-opacity-20 text-accent3">Kontes
+                                        Vokasi Luring</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                    <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
-                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i class="fas fa-edit"></i></button>
-                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-trash"></i></button>
+                                    <button class="text-primary hover:text-opacity-80 mr-3"><i
+                                            class="fas fa-eye"></i></button>
+                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i
+                                            class="fas fa-edit"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i
+                                            class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-50">
@@ -261,7 +363,8 @@
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
-                                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/men/76.jpg" alt="">
+                                            <img class="h-10 w-10 rounded-full"
+                                                src="https://randomuser.me/api/portraits/men/76.jpg" alt="">
                                         </div>
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900">Ahmad Fauzi</div>
@@ -269,17 +372,24 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Semarang</td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent1 bg-opacity-20 text-accent1">Inovasi Teknologi</span>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Semarang
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Ditolak</span>
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent1 bg-opacity-20 text-accent1">Inovasi
+                                        Teknologi</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Ditolak</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                    <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
-                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i class="fas fa-edit"></i></button>
-                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-trash"></i></button>
+                                    <button class="text-primary hover:text-opacity-80 mr-3"><i
+                                            class="fas fa-eye"></i></button>
+                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i
+                                            class="fas fa-edit"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i
+                                            class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-50">
@@ -287,7 +397,8 @@
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
-                                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/28.jpg" alt="">
+                                            <img class="h-10 w-10 rounded-full"
+                                                src="https://randomuser.me/api/portraits/women/28.jpg" alt="">
                                         </div>
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900">Siti Rahayu</div>
@@ -295,41 +406,54 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Jakarta</td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent5 bg-opacity-20 text-accent5">Kontes Vokasi Daring</span>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Politeknik Negeri Jakarta
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-accent5 bg-opacity-20 text-accent5">Kontes
+                                        Vokasi Daring</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                    <button class="text-primary hover:text-opacity-80 mr-3"><i class="fas fa-eye"></i></button>
-                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i class="fas fa-edit"></i></button>
-                                    <button class="text-red-500 hover:text-opacity-80"><i class="fas fa-trash"></i></button>
+                                    <button class="text-primary hover:text-opacity-80 mr-3"><i
+                                            class="fas fa-eye"></i></button>
+                                    <button class="text-accent5 hover:text-opacity-80 mr-3"><i
+                                            class="fas fa-edit"></i></button>
+                                    <button class="text-red-500 hover:text-opacity-80"><i
+                                            class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                
+
                 <div class="px-6 py-4 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between">
                     <div class="text-sm text-gray-500 mb-2 md:mb-0">
-                        Menampilkan <span class="font-medium">1</span> sampai <span class="font-medium">5</span> dari <span class="font-medium">1248</span> peserta
+                        Menampilkan <span class="font-medium">1</span> sampai <span class="font-medium">5</span> dari
+                        <span class="font-medium">1248</span> peserta
                     </div>
                     <div class="flex space-x-2">
-                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                        <button
+                            class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
                             Sebelumnya
                         </button>
-                        <button class="px-3 py-1 border border-primary bg-primary text-white rounded-md text-sm font-medium">
+                        <button
+                            class="px-3 py-1 border border-primary bg-primary text-white rounded-md text-sm font-medium">
                             1
                         </button>
-                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                        <button
+                            class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
                             2
                         </button>
-                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                        <button
+                            class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
                             3
                         </button>
-                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                        <button
+                            class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
                             Selanjutnya
                         </button>
                     </div>
@@ -340,21 +464,26 @@
 
     <script>
         // Toggle sidebar on mobile
-        document.getElementById('sidebarToggle').addEventListener('click', function() {
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
             document.getElementById('sidebar').classList.toggle('-translate-x-full');
         });
 
+        document.getElementById('sidebarClose').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.add('-translate-x-full');
+        });
+
         // Toggle user menu
-        document.getElementById('userMenuButton').addEventListener('click', function() {
+        document.getElementById('userMenuButton').addEventListener('click', function () {
             document.getElementById('userMenu').classList.toggle('hidden');
         });
 
         // Close user menu when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             if (!event.target.closest('#userMenuButton') && !event.target.closest('#userMenu')) {
                 document.getElementById('userMenu').classList.add('hidden');
             }
         });
     </script>
 </body>
+
 </html>
