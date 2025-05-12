@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery AITeC 2025 - Politeknik Negeri Jember</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="../assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/2.7.1/css/lightgallery.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F25922',
+                        secondary: '#F22727',
+                        accent1: '#90BF2A',
+                        accent2: '#509625',
+                        accent3: '#FEBF0F',
+                        accent4: '#FC9804',
+                        accent5: '#44AED5',
+                        accent6: '#0C339A',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .bg-primary {
+            background-color: #F25922;
+        }
+
+        .bg-secondary {
+            background-color: #F22727;
+        }
+
+        .bg-accent1 {
+            background-color: #90BF2A;
+        }
+
+        .bg-accent2 {
+            background-color: #509625;
+        }
+
+        .bg-accent3 {
+            background-color: #FEBF0F;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #F25922 0%, #F22727 100%);
+        }
+
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .lg-backdrop {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .lg-outer .lg-thumb-item.active, .lg-outer .lg-thumb-item:hover {
+            border-color: #F25922;
+        }
+
+        .lg-progress-bar .lg-progress {
+            background-color: #F25922;
+        }
+
+        .lg-toolbar .lg-icon:hover {
+            color: #F25922;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../index.html">
+                            <img class="h-11 md:h-14 w-auto" src="../assets/logo-navbar.png" alt="AITeC Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html#home" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="../index.html#welcome" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Sambutan</a>
+                    <a href="../index.html#timeline" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Timeline</a>
+                    <a href="../index.html#categories" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Kategori</a>
+                    <a href="../index.html#news" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Berita</a>
+                    <a href="../index.html#gallery" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Gallery</a>
+                    <a href="../auth/login.html" class="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition">Login</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-900 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html#home" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Home</a>
+                <a href="../index.html#welcome" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Sambutan</a>
+                <a href="../index.html#timeline" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Timeline</a>
+                <a href="../index.html#categories" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Kategori</a>
+                <a href="../index.html#news" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Berita</a>
+                <a href="../index.html#gallery" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-primary hover:bg-gray-100 rounded-md">Gallery</a>
+                <a href="../auth/login.html" class="block w-full text-center bg-primary text-white px-6 py-2 rounded-full text-base font-medium hover:bg-opacity-90 transition mt-2">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Galeri AITeC</h1>
+                <p class="text-xl max-w-3xl mx-auto opacity-90">Kumpulan momen berharga dari pelaksanaan AITeC tahun-tahun sebelumnya</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li>
+                        <div>
+                            <a href="../index.html" class="text-gray-500 hover:text-primary">
+                                <i class="fas fa-home"></i>
+                                <span class="sr-only">Home</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <a href="../index.html#gallery" class="ml-2 text-sm font-medium text-gray-500 hover:text-primary">Galeri</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="ml-2 text-sm font-medium text-gray-700">Semua Foto</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Filter Options -->
+            <div class="mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Semua Foto AITeC</h2>
+                        <p class="text-gray-600">Telusuri koleksi foto dari berbagai edisi AITeC</p>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <div class="relative flex-grow">
+                                <select class="block w-full pl-4 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary appearance-none bg-white">
+                                    <option>Semua Tahun</option>
+                                    <option>2025</option>
+                                    <option>2024</option>
+                                    <option>2023</option>
+                                    <option>2022</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="relative flex-grow">
+                                <select class="block w-full pl-4 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary appearance-none bg-white">
+                                    <option>Semua Kategori</option>
+                                    <option>Pembukaan</option>
+                                    <option>Penutupan</option>
+                                    <option>Lomba</option>
+                                    <option>Peserta</option>
+                                    <option>Penghargaan</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="lightgallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Gallery Item 1 -->
+                <a href="../assets/foto/pembukaan_aitec6_polinela_2024_3.jpg" class="gallery-item" data-sub-html="<h4>Pembukaan AITeC VI 2024</h4><p>Momen pembukaan Agricultural Innovation Technology Competition ke-6 di Politeknik Negeri Lampung</p>">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="../assets/foto/pembukaan_aitec6_polinela_2024_3.jpg" alt="Pembukaan AITeC VI" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                            <div class="absolute top-4 right-4 bg-white text-gray-800 text-xs font-bold px-2 py-1 rounded-full flex items-center">
+                                <i class="fas fa-camera mr-1"></i> Foto
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-900 mb-1">Pembukaan AITeC VI 2024</h3>
+                            <p class="text-sm text-gray-600">Politeknik Negeri Lampung</p>
+                            <div class="mt-2 flex justify-between items-center">
+                                <span class="text-xs text-gray-500">15 Okt 2024</span>
+                                <span class="text-xs text-gray-500 flex items-center">
+                                    <i class="far fa-eye mr-1"></i> 1.2k
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Gallery Item 2 -->
+                <a href="../assets/foto/polinela_juara_umum_aitec6_2024.jpg" class="gallery-item" data-sub-html="<h4>Juara Umum AITeC VI 2024</h4><p>Politeknik Negeri Lampung meraih juara umum AITeC ke-6 dengan raihan 12 kategori juara</p>">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="../assets/foto/polinela_juara_umum_aitec6_2024.jpg" alt="Juara Umum AITeC VI" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                            <div class="absolute top-4 right-4 bg-white text-gray-800 text-xs font-bold px-2 py-1 rounded-full flex items-center">
+                                <i class="fas fa-camera mr-1"></i> Foto
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-900 mb-1">Juara Umum AITeC VI 2024</h3>
+                            <p class="text-sm text-gray-600">Penghargaan</p>
+                            <div class="mt-2 flex justify-between items-center">
+                                <span class="text-xs text-gray-500">21 Okt 2024</span>
+                                <span class="text-xs text-gray-500 flex items-center">
+                                    <i class="far fa-eye mr-1"></i> 2.3k
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Gallery Item 3 -->
+                <a href="../assets/foto/pembukaan_aitec6_polinela_2024_2.png" class="gallery-item" data-sub-html="<h4>Peserta AITeC VI 2024</h4><p>Para peserta dari berbagai politeknik se-Indonesia berkumpul dalam acara pembukaan</p>">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="../assets/foto/pembukaan_aitec6_polinela_2024_2.png" alt="Peserta AITeC VI" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                            <div class="absolute top-4 right-4 bg-white text-gray-800 text-xs font-bold px-2 py-1 rounded-full flex items-center">
+                                <i class="fas fa-camera mr-1"></i> Foto
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-900 mb-1">Peserta AITeC VI 2024</h3>
+                            <p class="text-sm text-gray-600">Pembukaan</p>
+                            <div class="mt-2 flex justify-between items-center">
+                                <span class="text-xs text-gray-500">15 Okt 2024</span>
+                                <span class="text-xs text-gray-500 flex items-center">
+                                    <i class="far fa-eye mr-1"></i> 1.8k
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Gallery Item 4 -->
+                <a href="../assets/foto/polinela_juara_umum_aitec6_2024.jpg" class="gallery-item" data-sub-html="<h4>Lomba Desain Alat Pertanian</h4><p>Peserta sedang mempresentasikan hasil karya mereka dalam lomba desain alat dan mesin pertanian</p>">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="../assets/foto/polinela_juara_umum_aitec6_2024.jpg" alt="Lomba Desain Alat Pertanian" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                            <div class="absolute top-4 right-4 bg-white text-gray-800 text-xs font-bold px-2 py-1 rounded-full flex items-center">
+                                <i class="fas fa-camera mr-1"></i> Foto
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-900 mb-1">Lomba Desain Alat Pertanian</h3>
+                            <p class="text-sm text-gray-600">Kontes Vokasi</p>
+                            <div class="mt-2 flex justify-between items-center">
+                                <span class="text-xs text-gray-500">17 Okt 2024</span>
+                                <span class="text-xs text-gray-500 flex items-center">
+                                    <i class="far fa-eye mr-1"></i> 1.5k
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Gallery Item 5 -->
+                <a href="../assets/foto/pembukaan_aitec6_polinela_2024_3.jpg" class="gallery-item" data-sub-html="<h4>Penyerahan Hadiah</h4><p>Momen penyerahan hadiah kepada para pemenang AITeC VI 2024</p>">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="../assets/foto/pembukaan_aitec6_polinela_2024_3.jpg" alt="Penyerahan Hadiah" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                            <div class="absolute top-4 right-4 bg-white text-gray-800 text-xs font-bold px-2 py-1 rounded-full flex items-center">
+                                <i class="fas fa-camera mr-1"></i> Foto
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-900 mb-1">Penyerahan Hadiah</h3>
+                            <p class="text-sm text-gray-600">Penghargaan</p>
+                            <div class="mt-2 flex justify-between items-center">
+                                <span class="text-xs text-gray-500">21 Okt 2024</span>
+                                <span class="text-xs text-gray-500 flex items-center">
+                                    <i class="far fa-eye mr-1"></i> 2.1k
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Gallery Item 6 -->
+                <a href="../assets/foto/pembukaan_aitec6_polinela_2024_2.png" class="gallery-item" data-sub-html="<h4>Stand Pameran</h4><p>Berbagai stand pameran inovasi teknologi pertanian dari peserta AITeC VI 2024</p>">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="../assets/foto/pembukaan_aitec6_polinela_2024_2.png" alt="Stand Pameran" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                            <div class="absolute top-4 right-4 bg-white text-gray-800 text-xs font-bold px-2 py-1 rounded-full flex items-center">
+                                <i class="fas fa-camera mr-1"></i> Foto
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-900 mb-1">Stand Pameran</h3>
+                            <p class="text-sm text-gray-600">Expo</p>
+                            <div class="mt-2 flex justify-between items-center">
+                                <span class="text-xs text-gray-500">18 Okt 2024</span>
+                                <span class="text-xs text-gray-500 flex items-center">
+                                    <i class="far fa-eye mr-1"></i> 1.3k
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Gallery Item 7 -->
+                <a href="../assets/foto/polinela_juara_umum_aitec6_2024.jpg" class="gallery-item" data-sub-html="<h4>Lomba Fotografi</h4><p>Peserta lomba fotografi sedang mengambil gambar untuk kompetisi</p>">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="../assets/foto/polinela_juara_umum_aitec6_2024.jpg" alt="Lomba Fotografi" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                            <div class="absolute top-4 right-4 bg-white text-gray-800 text-xs font-bold px-2 py-1 rounded-full flex items-center">
+                                <i class="fas fa-camera mr-1"></i> Foto
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-900 mb-1">Lomba Fotografi</h3>
+                            <p class="text-sm text-gray-600">Kompetisi</p>
+                            <div class="mt-2 flex justify-between items-center">
+                                <span class="text-xs text-gray-500">19 Okt 2024</span>
+                                <span class="text-xs text-gray-500 flex items-center">
+                                    <i class="far fa-eye mr-1"></i> 980
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Gallery Item 8 -->
+                <a href="../assets/foto/pembukaan_aitec6_polinela_2024_3.jpg" class="gallery-item" data-sub-html="<h4>Penutupan AITeC VI</h4><p>Acara penutupan AITeC VI 2024 di Politeknik Negeri Lampung</p>">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="../assets/foto/pembukaan_aitec6_polinela_2024_3.jpg" alt="Penutupan AITeC VI" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                            <div class="absolute top-4 right-4 bg-white text-gray-800 text-xs font-bold px-2 py-1 rounded-full flex items-center">
+                                <i class="fas fa-camera mr-1"></i> Foto
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-900 mb-1">Penutupan AITeC VI</h3>
+                            <p class="text-sm text-gray-600">Acara</p>
+                            <div class="mt-2 flex justify-between items-center">
+                                <span class="text-xs text-gray-500">21 Okt 2024</span>
+                                <span class="text-xs text-gray-500 flex items-center">
+                                    <i class="far fa-eye mr-1"></i> 1.7k
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-16 flex justify-center">
+                <nav class="inline-flex rounded-md shadow">
+                    <a href="#" class="px-4 py-2 rounded-l-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
+                        <span class="sr-only">Previous</span>
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-primary font-medium hover:bg-gray-50">
+                        1
+                    </a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
+                        2
+                    </a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
+                        3
+                    </a>
+                    <a href="#" class="px-4 py-2 rounded-r-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
+                        <span class="sr-only">Next</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2 flex justify-content-start flex-col items-start">
+                    <img src="../assets/logo-footer.png" alt="AITeC Logo" class="h-13 md:h-20 w-auto mb-4">
+                    <p class="text-gray-400 mb-4">
+                        Agricultural Innovation Technology Competition (AITeC) merupakan kompetisi tahunan di bidang
+                        pertanian yang diikuti oleh Politeknik seluruh Indonesia di bidang pertanian.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="../index.html#welcome" class="text-gray-400 hover:text-white transition">Sambutan</a></li>
+                        <li><a href="../index.html#timeline" class="text-gray-400 hover:text-white transition">Timeline</a></li>
+                        <li><a href="../index.html#categories" class="text-gray-400 hover:text-white transition">Kategori</a></li>
+                        <li><a href="../index.html#gallery" class="text-gray-400 hover:text-white transition">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Kontak Kami</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>Jl. Mastrip, Krajan Timur, Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur
+                                68121</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                            <span>+62 331 333533</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-fax mr-3 text-primary"></i>
+                            <span>+62 331 333531</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>politeknik@polije.ac.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    &copy; 2025 AITeC Politeknik Negeri Jember. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white px-5 py-4 rounded-full shadow-lg opacity-0 invisible transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Lightgallery JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/2.7.1/lightgallery.min.js"></script>
+    <script>
+        // Initialize lightGallery
+        lightGallery(document.getElementById('lightgallery'), {
+            selector: '.gallery-item',
+            download: false,
+            counter: false,
+            getCaptionFromTitleOrAlt: false
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const offset = 80; // Adjust for fixed header
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
