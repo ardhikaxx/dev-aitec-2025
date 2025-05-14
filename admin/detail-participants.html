@@ -424,28 +424,7 @@
         </main>
     </div>
 
-    <script>
-        // Toggle sidebar on mobile
-        document.getElementById('sidebarToggle').addEventListener('click', function () {
-            document.getElementById('sidebar').classList.toggle('-translate-x-full');
-        });
-
-        document.getElementById('sidebarClose').addEventListener('click', function () {
-            document.getElementById('sidebar').classList.add('-translate-x-full');
-        });
-
-        // Toggle user menu
-        document.getElementById('userMenuButton').addEventListener('click', function () {
-            document.getElementById('userMenu').classList.toggle('hidden');
-        });
-
-        // Close user menu when clicking outside
-        document.addEventListener('click', function (event) {
-            if (!event.target.closest('#userMenuButton') && !event.target.closest('#userMenu')) {
-                document.getElementById('userMenu').classList.add('hidden');
-            }
-        });
-    </script>
+    <script src="../js/admin.js"></script>
 </body>
 
 </html>
