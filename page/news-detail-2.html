@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="./assets/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/landing-page.css">
     <script>
         tailwind.config = {
             theme: {
@@ -29,63 +30,6 @@
             }
         }
     </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        .article-content p {
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .article-content img {
-            border-radius: 0.5rem;
-            margin: 2rem auto;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-
-        .article-content h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 2rem 0 1rem;
-            color: #1f2937;
-        }
-
-        .article-content h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin: 1.5rem 0 0.75rem;
-            color: #1f2937;
-        }
-
-        .article-content ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .article-content ol {
-            list-style-type: decimal;
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .article-content li {
-            margin-bottom: 0.5rem;
-        }
-
-        .article-content blockquote {
-            border-left: 4px solid #F25922;
-            padding-left: 1rem;
-            font-style: italic;
-            color: #4b5563;
-            margin: 1.5rem 0;
-        }
-    </style>
 </head>
 
 <body class="bg-gray-50">
@@ -387,61 +331,6 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Back to top button
-        const backToTopButton = document.getElementById('back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'visible');
-                backToTopButton.classList.add('opacity-0', 'invisible');
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                // Close mobile menu if open
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const offset = 80; // Adjust for fixed header
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="../js/news.js" type="module"></script>
 </body>
 </html>
