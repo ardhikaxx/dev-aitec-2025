@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inovasi Teknologi - Video | AITeC 2025 Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="../../../assets/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
@@ -27,9 +28,146 @@
 </head>
 <body class="bg-gray-100 font-sans">
     <!-- Sidebar -->
-    <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50" id="sidebar">
-        <!-- Sidebar content same as competitions/index.html -->
-        <!-- ... -->
+    <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50"
+        id="sidebar">
+        <div class="flex items-center justify-center h-16 bg-primary">
+            <div class="flex items-center space-x-2">
+                <img src="../../../assets/logo/logotype-h-white.png" class="h-10 md:h-11 w-auto" alt="AITeC Logo">
+            </div>
+        </div>
+        <div class="overflow-y-auto h-full py-4">
+            <div class="px-4 py-2">
+                <div class="flex items-center space-x-3 p-3 bg-accent1 bg-opacity-10 rounded-lg">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin"
+                        class="w-10 h-10 rounded-full">
+                    <div>
+                        <p class="font-medium">Admin User</p>
+                        <p class="text-xs text-gray-500">Super Admin</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="mt-6">
+                <div class="px-4">
+                    <p class="text-xs uppercase text-gray-500 font-medium mb-4">Main Menu</p>
+                </div>
+
+                <a href="../../../admin/dashboard.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-tachometer-alt mr-3"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="../../../admin/participants.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-users mr-3"></i>
+                    <span>Data Peserta</span>
+                </a>
+
+                <div class="group">
+                <button class="flex items-center justify-between w-full px-6 py-3 text-primary bg-primary bg-opacity-10 border-r-4 border-primary">
+                    <div class="flex items-center">
+                        <i class="fas fa-trophy mr-3"></i>
+                        <span>Daftar Kompetisi</span>
+                    </div>
+                    <i class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                </button>
+                <div class="hidden group-hover:block">
+                    <a href="../index.html" class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                        <i class="fas fa-medal mr-3"></i>
+                        Daftar Kompetisi
+                    </a>
+                    
+                    <!-- Menu Inovasi Teknologi dengan submenu -->
+                    <div class="group/tech relative">
+                        <button class="flex items-center justify-between w-full px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <div class="flex items-center">
+                                <i class="fas fa-bolt mr-3"></i>
+                                <span>Inovasi Teknologi</span>
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transform group-hover/tech:rotate-180 transition duration-200"></i>
+                        </button>
+                        <div class="hidden group-hover/tech:block ml-4 pl-2 border-l-2 border-gray-200">
+                            <a href="../tech-innovation/proposals.html" class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <span>Proposal</span>
+                            </a>
+                            <a href="../tech-innovation/videos.html" class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <span>Video Submission</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Kontes Vokasi dengan submenu -->
+                    <div class="group/vokasi relative">
+                        <button class="flex items-center justify-between w-full px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <div class="flex items-center">
+                                <i class="fas fa-graduation-cap mr-3"></i>
+                                <span>Kontes Vokasi</span>
+                            </div>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="hidden group-hover/vokasi:block ml-4 pl-2 border-l-2 border-gray-200">
+                            <a href="../vokasi-contest/online.html" class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <span>Daring</span>
+                            </a>
+                            <a href="../vokasi-contest/offline.html" class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <span>Luring</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="group">
+                    <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-photo-video mr-3"></i>
+                            <span>Media</span>
+                        </div>
+                        <i
+                            class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                    </button>
+                    <div class="hidden group-hover:block hover:block">
+                        <a href="../../media/news.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-newspaper mr-2 text-xs"></i>
+                            <span>News</span>
+                        </a>
+                        <a href="../../media/gallery.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-images mr-2 text-xs"></i>
+                            <span>Gallery</span>
+                        </a>
+                        <a href="../../media/greetings.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-address-card mr-2 text-xs"></i>
+                            <span>Sambutan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="../../../admin/universities.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-university mr-3"></i>
+                    <span>Data Perguruan Tinggi</span>
+                </a>
+
+                <a href="../../../admin/committees.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-user-tie mr-3"></i>
+                    <span>Data Panitia</span>
+                </a>
+
+                <a href="../../../admin/verification.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-check-circle mr-3"></i>
+                    <span>Verifikasi</span>
+                </a>
+
+                <!-- Mobile close button - visible only on mobile -->
+                <div class="md:hidden px-6 py-3 mt-4 flex justify-center">
+                    <button id="sidebarClose"
+                        class="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full text-gray-600 hover:bg-gray-300 transition-colors duration-200">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
     </div>
 
     <!-- Main Content -->
@@ -44,10 +182,6 @@
                     <h1 class="text-xl font-semibold text-gray-800">Inovasi Teknologi - Video</h1>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <button class="text-gray-600 focus:outline-none">
-                        <i class="fas fa-bell text-xl"></i>
-                        <span class="absolute top-3 right-3 md:right-auto md:left-3 h-2 w-2 rounded-full bg-red-500"></span>
-                    </button>
                     <div class="relative">
                         <button id="userMenuButton" class="flex items-center focus:outline-none">
                             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="w-8 h-8 rounded-full">
@@ -55,9 +189,9 @@
                             <i class="fas fa-chevron-down ml-1 text-xs text-gray-600"></i>
                         </button>
                         <div id="userMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
-                            <a href="../../../index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                            <a href="../../../admin/admin-profile.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            <a href="../../../admin/admin-settings.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                            <a href="../../../auth/login.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -88,7 +222,7 @@
                     <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
                         <div class="relative">
                             <div class="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
-                                <img src="https://source.unsplash.com/random/600x400/?technology" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                <img src="https://technologyindonesia.id/wp-content/uploads/2021/11/Irigasi-Tetes.jpg" alt="Video Thumbnail" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 flex items-center justify-center">
                                     <button class="bg-black bg-opacity-50 rounded-full p-4 text-white hover:bg-opacity-70">
                                         <i class="fas fa-play text-xl"></i>
@@ -120,7 +254,7 @@
                     <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
                         <div class="relative">
                             <div class="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
-                                <img src="https://source.unsplash.com/random/600x400/?agriculture" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                <img src="https://www.microthings.id/wp-content/uploads/2021/02/Monitoring-Sistem-Tanaman-Otomatis-Berbasis-Internet-of-Things-870x460.png" alt="Video Thumbnail" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 flex items-center justify-center">
                                     <button class="bg-black bg-opacity-50 rounded-full p-4 text-white hover:bg-opacity-70">
                                         <i class="fas fa-play text-xl"></i>
@@ -152,7 +286,7 @@
                     <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
                         <div class="relative">
                             <div class="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
-                                <img src="https://source.unsplash.com/random/600x400/?drone" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                <img src="https://faperta.umsu.ac.id/wp-content/uploads/2022/01/feature-1093x570.jpg" alt="Video Thumbnail" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 flex items-center justify-center">
                                     <button class="bg-black bg-opacity-50 rounded-full p-4 text-white hover:bg-opacity-70">
                                         <i class="fas fa-play text-xl"></i>
@@ -184,7 +318,7 @@
                     <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
                         <div class="relative">
                             <div class="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
-                                <img src="https://source.unsplash.com/random/600x400/?hydroponic" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                <img src="https://ftmm.unair.ac.id/wp-content/uploads/2021/12/Screenshot_20211231_101250.jpg" alt="Video Thumbnail" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 flex items-center justify-center">
                                     <button class="bg-black bg-opacity-50 rounded-full p-4 text-white hover:bg-opacity-70">
                                         <i class="fas fa-play text-xl"></i>
@@ -216,7 +350,7 @@
                     <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
                         <div class="relative">
                             <div class="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
-                                <img src="https://source.unsplash.com/random/600x400/?camera" alt="Video Thumbnail" class="w-full h-full object-cover">
+                                <img src="https://miro.medium.com/v2/resize:fit:1400/1*3tScmkJXgYrpRZItLmTsWg.png" alt="Video Thumbnail" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 flex items-center justify-center">
                                     <button class="bg-black bg-opacity-50 rounded-full p-4 text-white hover:bg-opacity-70">
                                         <i class="fas fa-play text-xl"></i>
@@ -282,23 +416,6 @@
         </main>
     </div>
 
-    <script>
-        // Toggle sidebar on mobile
-        document.getElementById('sidebarToggle').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.toggle('-translate-x-full');
-        });
-
-        // Toggle user menu
-        document.getElementById('userMenuButton').addEventListener('click', function() {
-            document.getElementById('userMenu').classList.toggle('hidden');
-        });
-
-        // Close user menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('#userMenuButton') && !event.target.closest('#userMenu')) {
-                document.getElementById('userMenu').classList.add('hidden');
-            }
-        });
-    </script>
+    <script src="../../../js/admin.js"></script>
 </body>
 </html>
