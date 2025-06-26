@@ -34,7 +34,7 @@ const observer = new IntersectionObserver(
 observer.observe(statsSection);
 
 // Countdown Timer
-const countDownDate = new Date("Jun 26, 2025 00:00:00").getTime();
+const countDownDate = new Date("Jul 28, 2025 00:00:00").getTime();
 
 const x = setInterval(function () {
     const now = new Date().getTime();
