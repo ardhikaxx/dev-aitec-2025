@@ -46,7 +46,7 @@ body {
 
 .hero-overlay {
     position: absolute;
-    opacity: 85%;
+    opacity: 50%;
     top: 0;
     left: 0;
     width: 100%;
