@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penilaian Inovasi Teknologi | AITeC 2025 Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="../../assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F25922',
+                        secondary: '#F22727',
+                        accent1: '#90BF2A',
+                        accent2: '#509625',
+                        accent3: '#FEBF0F',
+                        accent4: '#FC9804',
+                        accent5: '#44AED5',
+                        accent6: '#0C339A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50"
+        id="sidebar">
+        <div class="flex items-center justify-center h-16 bg-primary">
+            <div class="flex items-center space-x-2">
+                <img src="../../assets/logo/logotype-h-white.png" class="h-10 md:h-11 w-auto" alt="AITeC Logo">
+            </div>
+        </div>
+        <div class="overflow-y-auto h-full py-4">
+            <div class="px-4 py-2">
+                <div class="flex items-center space-x-3 p-3 bg-accent1 bg-opacity-10 rounded-lg">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin"
+                        class="w-10 h-10 rounded-full">
+                    <div>
+                        <p class="font-medium">Admin User</p>
+                        <p class="text-xs text-gray-500">Super Admin</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="mt-6">
+                <div class="px-4">
+                    <p class="text-xs uppercase text-gray-500 font-medium mb-4">Main Menu</p>
+                </div>
+
+                <a href="../dashboard.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-tachometer-alt mr-3"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="../participants.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-users mr-3"></i>
+                    <span>Data Peserta</span>
+                </a>
+
+                <div class="group">
+                    <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-trophy mr-3"></i>
+                            <span>Daftar Kompetisi</span>
+                        </div>
+                        <i
+                            class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                    </button>
+                    <div class="hidden group-hover:block">
+                        <a href="../competitions/index.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-medal mr-3"></i>
+                            Daftar Kompetisi
+                        </a>
+
+                        <!-- Menu Inovasi Teknologi dengan submenu -->
+                        <div class="group/tech relative">
+                            <button
+                                class="flex items-center justify-between w-full px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-bolt mr-3"></i>
+                                    <span>Inovasi Teknologi</span>
+                                </div>
+                                <i
+                                    class="fas fa-chevron-down text-xs transform group-hover/tech:rotate-180 transition duration-200"></i>
+                            </button>
+                            <div class="hidden group-hover/tech:block ml-4 pl-2 border-l-2 border-gray-200">
+                                <a href="../competitions/tech-innovation/proposals.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Proposal</span>
+                                </a>
+                                <a href="../competitions/tech-innovation/videos.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Video Submission</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Menu Kontes Vokasi dengan submenu -->
+                        <div class="group/vokasi relative">
+                            <button
+                                class="flex items-center justify-between w-full px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-graduation-cap mr-3"></i>
+                                    <span>Kontes Vokasi</span>
+                                </div>
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </button>
+                            <div class="hidden group-hover/vokasi:block ml-4 pl-2 border-l-2 border-gray-200">
+                                <a href="../competitions/vokasi-contest/online.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Daring</span>
+                                </a>
+                                <a href="../competitions/vokasi-contest/offline.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Luring</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-photo-video mr-3"></i>
+                            <span>Media</span>
+                        </div>
+                        <i
+                            class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                    </button>
+                    <div class="hidden group-hover:block hover:block">
+                        <a href="../media/news.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-newspaper mr-2 text-xs"></i>
+                            <span>News</span>
+                        </a>
+                        <a href="../media/gallery.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-images mr-2 text-xs"></i>
+                            <span>Gallery</span>
+                        </a>
+                        <a href="../media/greetings.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-address-card mr-2 text-xs"></i>
+                            <span>Sambutan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="../universities.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-university mr-3"></i>
+                    <span>Data Perguruan Tinggi</span>
+                </a>
+
+                <a href="../committees.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-user-tie mr-3"></i>
+                    <span>Data Panitia</span>
+                </a>
+
+                <a href="../verification.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-check-circle mr-3"></i>
+                    <span>Verifikasi</span>
+                </a>
+
+                <a href="./index.html"
+                    class="flex items-center px-6 py-3 text-primary bg-primary bg-opacity-10 border-r-4 border-primary">
+                    <i class="fas fa-clipboard-check mr-3"></i>
+                    <span>Penilaian</span>
+                </a>
+
+                <!-- Mobile close button - visible only on mobile -->
+                <div class="md:hidden px-6 py-3 mt-4 flex justify-center">
+                    <button id="sidebarClose"
+                        class="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full text-gray-600 hover:bg-gray-300 transition-colors duration-200">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="md:ml-64 transition-all duration-300">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-6 py-3">
+                <div class="flex items-center">
+                    <button id="sidebarToggle" class="md:hidden text-gray-600 focus:outline-none mr-4">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-semibold text-gray-800">Penilaian Inovasi Teknologi Bidang Pertanian</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button id="userMenuButton" class="flex items-center focus:outline-none">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin"
+                                class="w-8 h-8 rounded-full">
+                            <span class="ml-2 text-gray-700 hidden md:inline">Admin</span>
+                            <i class="fas fa-chevron-down ml-1 text-xs text-gray-600"></i>
+                        </button>
+                        <div id="userMenu"
+                            class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                            <a href="../admin-profile.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            <a href="../admin-settings.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                            <a href="../../auth/login.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-6">
+            <!-- Page Header -->
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">LEMBAR PENILAIAN INOVASI TEKNOLOGI BIDANG PERTANIAN</h2>
+                <p class="text-gray-600">Silakan pilih tahap penilaian dan isi form sesuai dengan ketentuan</p>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="bg-white rounded-lg shadow overflow-hidden mb-6">
+                <div class="border-b border-gray-200">
+                    <nav class="flex -mb-px">
+                        <button id="deskEvaluationTab"
+                            class="py-4 px-6 text-center border-b-2 font-medium text-sm border-primary text-primary focus:outline-none">
+                            Desk Evaluation
+                        </button>
+                        <button id="videoProgressTab"
+                            class="py-4 px-6 text-center border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none">
+                            Video Progress
+                        </button>
+                        <button id="videoPosterFinalTab"
+                            class="py-4 px-6 text-center border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none">
+                            Video & Poster (Final)
+                        </button>
+                        <button id="finalEvaluationTab"
+                            class="py-4 px-6 text-center border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none">
+                            Final Evaluation
+                        </button>
+                        <button id="rekapNilaiTab"
+                            class="py-4 px-6 text-center border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none">
+                            Rekapitulasi Nilai
+                        </button>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Desk Evaluation Content (Default Visible) -->
+            <div id="deskEvaluationContent" class="bg-white rounded-lg shadow overflow-hidden p-6">
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">LEMBAR PENILAIAN DESK EVALUATION KOMPETISI INOVASI TEKNOLOGI BIDANG PERTANIAN</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Judul Proposal</label>
+                            <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Masukkan judul proposal">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nama Ketua Tim</label>
+                            <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Nama lengkap ketua tim">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Asal Perguruan Tinggi</label>
+                            <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Nama perguruan tinggi">
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-12">No</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aspek Penilaian</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-40">Hasil</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Catatan Evaluator</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <!-- Row 1 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Proposal sesuai dengan tema AITEC 7</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 2 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Proposal diawali dengan Halaman Sampul</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 3 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Nama lengkap/NIM/Angkatan Keanggotaan tim disarankan minimal dari dua angkatan yang berbeda (tidak wajib)</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 4 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">4</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Judul maksimal 20 kata</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 5 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Tim (2–4 orang termasuk Ketua)</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 6 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Jumlah halaman inti maksimal 10 halaman (BAB 1 PENDAHULUAN hingga DAFTAR PUSTAKA)</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 7 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">7</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Ukuran kertas A4 dengan margin kiri 4 cm, kanan 3 cm, atas 3 cm, dan bawah 3 cm</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 8 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">8</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Font 12 Times New Roman dengan spasi 1,5</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 9 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">9</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Penomoran halaman inti (dimulai dari BAB 1 PENDAHULUAN hingga Lampiran) ditulis dengan huruf arab (1,2,...) dengan posisi pojok kanan atas</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 10 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">10</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Halaman Pengesahan, Daftar Isi (termasuk Daftar Tabel dan Daftar Gambar jika ada) nomor halaman menggunakan angka romawi kecil dimulai dari i atau iii dengan posisi pojok kanan bawah</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 11 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">11</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">BAB 1. PENDAHULUAN Memuat latar belakang, rumusan masalah, tujuan dan target luaran</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 12 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">12</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">BAB 2. GAGASAN : memuat setidaknya:
+                                        <ul class="list-disc pl-5 mt-2">
+                                            <li>Kondisi aktual objek permasalahan (dapat diperoleh dari bahan tulisan resmi dan relevan, wawancara atau observasi mandiri)</li>
+                                            <li>Gagasan dari masalah terkait yang pernah diimplementasikan sebelumnya</li>
+                                            <li>Bahasan lengkap mengenai gagasan yang diajukan. Dukungan berupa media visualisasi gagasan akan sangat membantu dalam penilaian</li>
+                                            <li>Dilengkapi kajian pustaka yang mendukung</li>
+                                        </ul>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 13 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">13</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">BAB 3. METODE PELAKSANAAN / TAHAPAN PELAKSANAAN Memuat tempat dan tahapan pelaksanaan kegiatan</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 14 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">14</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">BAB 4. BIAYA DAN JADWAL KEGIATAN
+                                        <ul class="list-disc pl-5 mt-2">
+                                            <li>Biaya maksimal 7.5 juta (jumlah total harus sama dengan Lampiran 2)</li>
+                                            <li>Waktu pelaksanaan maksimal 2 bulan</li>
+                                        </ul>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 15 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">15</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">DAFTAR PUSTAKA
+                                        <ul class="list-disc pl-5 mt-2">
+                                            <li>Pustaka yang dikutip pada bagian inti harus tercantum pada DAFTAR PUSTAKA, demikian pula sebaliknya</li>
+                                            <li>Spasi 1 dan jarak antar sumber referensi 1,5</li>
+                                            <li>Ditulis menggunakan Harvard Style</li>
+                                        </ul>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 16 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">16</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Lampiran 1. Biodata Ketua, Anggota, dan Dosen Pembimbing
+                                        <ul class="list-disc pl-5 mt-2">
+                                            <li>Format harus sesuai dengan Pedoman AITeC 2025 dan ditandatangani</li>
+                                            <li>Tanggal penandatanganan biodata harus sesuai dengan periode pengusulan proposal</li>
+                                        </ul>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 17 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">17</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Lampiran 2. Justifikasi Anggaran Kegiatan (maksimal 7.5 juta) Jumlah total dana yang diajukan harus sama dengan yang tertera pada BAB 4</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 18 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">18</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Lampiran 3. Susunan Organisasi Tim Kegiatan dan Pembagian Tugas</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 19 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">19</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Lampiran 4. Surat Pernyataan Ketua Pelaksana Harus menggunakan tanda tangan basah, bermaterai, dan cap institusi (sesuai kewenangan)</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                                <!-- Row 20 -->
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">20</td>
+                                    <td class="px-6 py-4 text-sm text-gray-500">Lampiran 5. Gambaran teknologi yang akan diterapkan/kembangkan</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <select class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="" disabled selected>Pilih</option>
+                                            <option value="lengkap">Lengkap</option>
+                                            <option value="tidak-lengkap">Tidak Lengkap</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Catatan (jika ada)">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-exclamation-circle text-yellow-400"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-yellow-700">
+                                    <strong>Catatan Penilaian:</strong> Setiap aspek yang dinilai harus diisi dengan hasil evaluasi apakah "Lengkap" atau "Tidak Lengkap". Untuk setiap kelengkapan yang tidak memenuhi syarat, perlu diberikan catatan atau komentar dari evaluator. Proposal yang mendapatkan hasil "Lengkap" pada semua aspek akan melanjutkan ke tahap seleksi berikutnya.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-blue-50 border-l-4 border-blue-400 p-4">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-info-circle text-blue-400"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-blue-700">
+                                    <strong>Panduan Evaluator:</strong><br>
+                                    <strong>Lengkap</strong> : Memenuhi semua persyaratan yang ditentukan.<br>
+                                    <strong>Tidak Lengkap</strong> : Tidak memenuhi satu atau lebih persyaratan yang ditentukan, dengan catatan tentang kekurangan tersebut.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex justify-end space-x-4">
+                        <button type="button" class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                            Reset Form
+                        </button>
+                        <button type="button" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                            Simpan Penilaian
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Progress Content (Hidden by Default) -->
+            <div id="videoProgressContent" class="bg-white rounded-lg shadow overflow-hidden p-6 hidden">
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">LEMBAR PENILAIAN VIDEO PROGRESS KOMPETISI INOVASI TEKNOLOGI BIDANG PERTANIAN</h3>
+                    <div class="text-center py-10">
+                        <i class="fas fa-video text-5xl text-gray-300 mb-4"></i>
+                        <p class="text-gray-500">Halaman penilaian video progress akan ditampilkan di sini</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video & Poster Final Content (Hidden by Default) -->
+            <div id="videoPosterFinalContent" class="bg-white rounded-lg shadow overflow-hidden p-6 hidden">
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">LEMBAR PENILAIAN VIDEO DAN POSTER KOMPETISI INOVASI TEKNOLOGI BIDANG PERTANIAN (BABAK FINAL)</h3>
+                    <div class="text-center py-10">
+                        <i class="fas fa-photo-video text-5xl text-gray-300 mb-4"></i>
+                        <p class="text-gray-500">Halaman penilaian video dan poster final akan ditampilkan di sini</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Evaluation Content (Hidden by Default) -->
+            <div id="finalEvaluationContent" class="bg-white rounded-lg shadow overflow-hidden p-6 hidden">
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">LEMBAR PENILAIAN KOMPETISI INOVASI TEKNOLOGI BIDANG PERTANIAN (BABAK FINAL)</h3>
+                    <div class="text-center py-10">
+                        <i class="fas fa-trophy text-5xl text-gray-300 mb-4"></i>
+                        <p class="text-gray-500">Halaman penilaian final akan ditampilkan di sini</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rekap Nilai Content (Hidden by Default) -->
+            <div id="rekapNilaiContent" class="bg-white rounded-lg shadow overflow-hidden p-6 hidden">
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">LEMBAR REKAPITULASI NILAI AKHIR KOMPETISI INOVASI TEKNOLOGI BIDANG PERTANIAN</h3>
+                    <div class="text-center py-10">
+                        <i class="fas fa-clipboard-list text-5xl text-gray-300 mb-4"></i>
+                        <p class="text-gray-500">Halaman rekap nilai akan ditampilkan di sini</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Alpine JS for interactivity -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all tab buttons and content divs
+            const deskEvaluationTab = document.getElementById('deskEvaluationTab');
+            const videoProgressTab = document.getElementById('videoProgressTab');
+            const videoPosterFinalTab = document.getElementById('videoPosterFinalTab');
+            const finalEvaluationTab = document.getElementById('finalEvaluationTab');
+            const rekapNilaiTab = document.getElementById('rekapNilaiTab');
+            
+            const deskEvaluationContent = document.getElementById('deskEvaluationContent');
+            const videoProgressContent = document.getElementById('videoProgressContent');
+            const videoPosterFinalContent = document.getElementById('videoPosterFinalContent');
+            const finalEvaluationContent = document.getElementById('finalEvaluationContent');
+            const rekapNilaiContent = document.getElementById('rekapNilaiContent');
+            
+            // Function to reset all tabs
+            function resetTabs() {
+                // Remove active class from all tabs
+                deskEvaluationTab.classList.remove('border-primary', 'text-primary');
+                deskEvaluationTab.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                
+                videoProgressTab.classList.remove('border-primary', 'text-primary');
+                videoProgressTab.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                
+                videoPosterFinalTab.classList.remove('border-primary', 'text-primary');
+                videoPosterFinalTab.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                
+                finalEvaluationTab.classList.remove('border-primary', 'text-primary');
+                finalEvaluationTab.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                
+                rekapNilaiTab.classList.remove('border-primary', 'text-primary');
+                rekapNilaiTab.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                
+                // Hide all content
+                deskEvaluationContent.classList.add('hidden');
+                videoProgressContent.classList.add('hidden');
+                videoPosterFinalContent.classList.add('hidden');
+                finalEvaluationContent.classList.add('hidden');
+                rekapNilaiContent.classList.add('hidden');
+            }
+            
+            // Function to activate a tab
+            function activateTab(tabButton, contentDiv) {
+                resetTabs();
+                
+                // Add active class to clicked tab
+                tabButton.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                tabButton.classList.add('border-primary', 'text-primary');
+                
+                // Show corresponding content
+                contentDiv.classList.remove('hidden');
+            }
+            
+            // Add click event listeners
+            deskEvaluationTab.addEventListener('click', function() {
+                activateTab(deskEvaluationTab, deskEvaluationContent);
+            });
+            
+            videoProgressTab.addEventListener('click', function() {
+                activateTab(videoProgressTab, videoProgressContent);
+            });
+            
+            videoPosterFinalTab.addEventListener('click', function() {
+                activateTab(videoPosterFinalTab, videoPosterFinalContent);
+            });
+            
+            finalEvaluationTab.addEventListener('click', function() {
+                activateTab(finalEvaluationTab, finalEvaluationContent);
+            });
+            
+            rekapNilaiTab.addEventListener('click', function() {
+                activateTab(rekapNilaiTab, rekapNilaiContent);
+            });
+            
+            // Initialize with Desk Evaluation tab active
+            activateTab(deskEvaluationTab, deskEvaluationContent);
+        });
+    </script>
+    <script src="../../js/admin.js" type="module"></script>
+</body>
+
+</html>
