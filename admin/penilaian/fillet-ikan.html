@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penilaian Teknik Fillet Ikan | AITeC 2025 Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="../../assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F25922',
+                        secondary: '#F22727',
+                        accent1: '#90BF2A',
+                        accent2: '#509625',
+                        accent3: '#FEBF0F',
+                        accent4: '#FC9804',
+                        accent5: '#44AED5',
+                        accent6: '#0C339A',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .category-header {
+            background-color: #f3f4f6;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .subcategory-item {
+            background-color: #f9fafb;
+            color: #4b5563;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 bg-white w-64 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-50"
+        id="sidebar">
+        <div class="flex items-center justify-center h-16 bg-primary">
+            <div class="flex items-center space-x-2">
+                <img src="../../assets/logo/logotype-h-white.png" class="h-10 md:h-11 w-auto" alt="AITeC Logo">
+            </div>
+        </div>
+        <div class="overflow-y-auto h-full py-4">
+            <div class="px-4 py-2">
+                <div class="flex items-center space-x-3 p-3 bg-accent1 bg-opacity-10 rounded-lg">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin"
+                        class="w-10 h-10 rounded-full">
+                    <div>
+                        <p class="font-medium">Admin User</p>
+                        <p class="text-xs text-gray-500">Super Admin</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="mt-6">
+                <div class="px-4">
+                    <p class="text-xs uppercase text-gray-500 font-medium mb-4">Main Menu</p>
+                </div>
+
+                <a href="../dashboard.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-tachometer-alt mr-3"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="../participants.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-users mr-3"></i>
+                    <span>Data Peserta</span>
+                </a>
+
+                <div class="group">
+                    <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-trophy mr-3"></i>
+                            <span>Daftar Kompetisi</span>
+                        </div>
+                        <i
+                            class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                    </button>
+                    <div class="hidden group-hover:block">
+                        <a href="../competitions/index.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-medal mr-3"></i>
+                            Daftar Kompetisi
+                        </a>
+
+                        <!-- Menu Inovasi Teknologi dengan submenu -->
+                        <div class="group/tech relative">
+                            <button
+                                class="flex items-center justify-between w-full px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-bolt mr-3"></i>
+                                    <span>Inovasi Teknologi</span>
+                                </div>
+                                <i
+                                    class="fas fa-chevron-down text-xs transform group-hover/tech:rotate-180 transition duration-200"></i>
+                            </button>
+                            <div class="hidden group-hover/tech:block ml-4 pl-2 border-l-2 border-gray-200">
+                                <a href="../competitions/tech-innovation/proposals.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Proposal</span>
+                                </a>
+                                <a href="../competitions/tech-innovation/videos.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Video Submission</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Menu Kontes Vokasi dengan submenu -->
+                        <div class="group/vokasi relative">
+                            <button
+                                class="flex items-center justify-between w-full px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-graduation-cap mr-3"></i>
+                                    <span>Kontes Vokasi</span>
+                                </div>
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </button>
+                            <div class="hidden group-hover/vokasi:block ml-4 pl-2 border-l-2 border-gray-200">
+                                <a href="../competitions/vokasi-contest/online.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Daring</span>
+                                </a>
+                                <a href="../competitions/vokasi-contest/offline.html"
+                                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                                    <span>Luring</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <button class="flex items-center justify-between w-full px-6 py-3 text-gray-600 hover:bg-gray-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-photo-video mr-3"></i>
+                            <span>Media</span>
+                        </div>
+                        <i
+                            class="fas fa-chevron-down text-xs transform group-hover:rotate-180 transition duration-200"></i>
+                    </button>
+                    <div class="hidden group-hover:block hover:block">
+                        <a href="../media/news.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-newspaper mr-2 text-xs"></i>
+                            <span>News</span>
+                        </a>
+                        <a href="../media/gallery.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-images mr-2 text-xs"></i>
+                            <span>Gallery</span>
+                        </a>
+                        <a href="../media/greetings.html"
+                            class="flex items-center px-10 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                            <i class="fas fa-address-card mr-2 text-xs"></i>
+                            <span>Sambutan</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="../universities.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-university mr-3"></i>
+                    <span>Data Perguruan Tinggi</span>
+                </a>
+
+                <a href="../committees.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-user-tie mr-3"></i>
+                    <span>Data Panitia</span>
+                </a>
+
+                <a href="../verification.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100">
+                    <i class="fas fa-check-circle mr-3"></i>
+                    <span>Verifikasi</span>
+                </a>
+
+                <a href="./index.html"
+                    class="flex items-center px-6 py-3 text-primary bg-primary bg-opacity-10 border-r-4 border-primary">
+                    <i class="fas fa-clipboard-check mr-3"></i>
+                    <span>Penilaian</span>
+                </a>
+
+                <!-- Mobile close button - visible only on mobile -->
+                <div class="md:hidden px-6 py-3 mt-4 flex justify-center">
+                    <button id="sidebarClose"
+                        class="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full text-gray-600 hover:bg-gray-300 transition-colors duration-200">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="md:ml-64 transition-all duration-300">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-6 py-3">
+                <div class="flex items-center">
+                    <button id="sidebarToggle" class="md:hidden text-gray-600 focus:outline-none mr-4">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-semibold text-gray-800">Penilaian Teknik Proses Fillet Ikan</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button id="userMenuButton" class="flex items-center focus:outline-none">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin"
+                                class="w-8 h-8 rounded-full">
+                            <span class="ml-2 text-gray-700 hidden md:inline">Admin</span>
+                            <i class="fas fa-chevron-down ml-1 text-xs text-gray-600"></i>
+                        </button>
+                        <div id="userMenu"
+                            class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                            <a href="../admin-profile.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            <a href="../admin-settings.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                            <a href="../../auth/login.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-6">
+            <!-- Page Header -->
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">LEMBAR PENILAIAN TEKNIK PROSES FILLET IKAN</h2>
+                <p class="text-gray-600">Silakan isi form penilaian sesuai dengan ketentuan</p>
+            </div>
+
+            <!-- Participant Information -->
+            <div class="bg-white rounded-lg shadow overflow-hidden p-6 mb-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Informasi Peserta</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Nama</label>
+                        <input type="text"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="Nama lengkap peserta">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">NIM (Nomor Induk Mahasiswa)</label>
+                        <input type="text"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="Nomor induk mahasiswa">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Perguruan Tinggi</label>
+                        <input type="text"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="Nama perguruan tinggi">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assessment Form -->
+            <div class="bg-white rounded-lg shadow overflow-hidden p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Formulir Penilaian</h3>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-12">
+                                    No</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Kriteria Penilaian</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-24">
+                                    Bobot</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-32">
+                                    Skor</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-32">
+                                    Nilai</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <!-- Category 1 -->
+                            <tr class="category-header">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                                <td class="px-6 py-4 text-sm text-gray-500">Karakteristik mutu fillet ikan terstandar
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">30</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 category-1-value">0</td>
+                            </tr>
+                            <!-- Subitems for Category 1 -->
+                            <tr class="subcategory-item">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">a</td>
+                                <td class="px-6 py-4 text-sm text-gray-500">Akurasi irisan (bentuk)</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5</td>
+                                <td class="px-4 py-3 whitespace-nowrap">
+                                    <div class="min-w-[150px] w-full">
+                                        <select
+                                            class="sub-score-select block w-full pl-3 pr-10 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            data-weight="5" data-category="1">
+                                            <option value="0" selected disabled>Pilih Skor</option>
+                                            <option value="1">1 (Buruk)</option>
+                                            <option value="2">2 (Sangat Kurang)</option>
+                                            <option value="3">3 (Kurang)</option>
+                                            <option value="5">5 (Cukup)</option>
+                                            <option value="6">6 (Baik)</option>
+                                            <option value="7">7 (Sangat Baik)</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 sub-score-value">0</td>
+                            </tr>
+                            <tr class="subcategory-item">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">b</td>
+                                <td class="px-6 py-4 text-sm text-gray-500">Akurasi ukuran</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10</td>
+                                <td class="px-4 py-3 whitespace-nowrap">
+                                    <div class="min-w-[150px] w-full">
+                                        <select
+                                            class="sub-score-select block w-full pl-3 pr-10 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            data-weight="10" data-category="1">
+                                            <option value="0" selected disabled>Pilih Skor</option>
+                                            <option value="1">1 (Buruk)</option>
+                                            <option value="2">2 (Sangat Kurang)</option>
+                                            <option value="3">3 (Kurang)</option>
+                                            <option value="5">5 (Cukup)</option>
+                                            <option value="6">6 (Baik)</option>
+                                            <option value="7">7 (Sangat Baik)</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 sub-score-value">0</td>
+                            </tr>
+                            <tr class="subcategory-item">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">c</td>
+                                <td class="px-6 py-4 text-sm text-gray-500">Keutuhan</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5</td>
+                                <td class="px-4 py-3 whitespace-nowrap">
+                                    <div class="min-w-[150px] w-full">
+                                        <select
+                                            class="sub-score-select block w-full pl-3 pr-10 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            data-weight="5" data-category="1">
+                                            <option value="0" selected disabled>Pilih Skor</option>
+                                            <option value="1">1 (Buruk)</option>
+                                            <option value="2">2 (Sangat Kurang)</option>
+                                            <option value="3">3 (Kurang)</option>
+                                            <option value="5">5 (Cukup)</option>
+                                            <option value="6">6 (Baik)</option>
+                                            <option value="7">7 (Sangat Baik)</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 sub-score-value">0</td>
+                            </tr>
+                            <tr class="subcategory-item">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">d</td>
+                                <td class="px-6 py-4 text-sm text-gray-500">Jumlah duri</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10</td>
+                                <td class="px-4 py-3 whitespace-nowrap">
+                                    <div class="min-w-[150px] w-full">
+                                        <select
+                                            class="sub-score-select block w-full pl-3 pr-10 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            data-weight="10" data-category="1">
+                                            <option value="0" selected disabled>Pilih Skor</option>
+                                            <option value="1">1 (Buruk)</option>
+                                            <option value="2">2 (Sangat Kurang)</option>
+                                            <option value="3">3 (Kurang)</option>
+                                            <option value="5">5 (Cukup)</option>
+                                            <option value="6">6 (Baik)</option>
+                                            <option value="7">7 (Sangat Baik)</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 sub-score-value">0</td>
+                            </tr>
+
+                            <!-- Row 2 -->
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
+                                <td class="px-6 py-4 text-sm text-gray-500">Kesesuaian bahan dan alat</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10</td>
+                                <td class="px-4 py-3 whitespace-nowrap">
+                                    <div class="min-w-[150px] w-full">
+                                        <select
+                                            class="score-select block w-full pl-3 pr-10 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            data-weight="10">
+                                            <option value="0" selected disabled>Pilih Skor</option>
+                                            <option value="1">1 (Buruk)</option>
+                                            <option value="2">2 (Sangat Kurang)</option>
+                                            <option value="3">3 (Kurang)</option>
+                                            <option value="5">5 (Cukup)</option>
+                                            <option value="6">6 (Baik)</option>
+                                            <option value="7">7 (Sangat Baik)</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 score-value">0</td>
+                            </tr>
+
+                            <!-- Row 3 -->
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
+                                <td class="px-6 py-4 text-sm text-gray-500">Kecepatan</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10</td>
+                                <td class="px-4 py-3 whitespace-nowrap">
+                                    <div class="min-w-[150px] w-full">
+                                        <select
+                                            class="score-select block w-full pl-3 pr-10 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            data-weight="10">
+                                            <option value="0" selected disabled>Pilih Skor</option>
+                                            <option value="1">1 (Buruk)</option>
+                                            <option value="2">2 (Sangat Kurang)</option>
+                                            <option value="3">3 (Kurang)</option>
+                                            <option value="5">5 (Cukup)</option>
+                                            <option value="6">6 (Baik)</option>
+                                            <option value="7">7 (Sangat Baik)</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 score-value">0</td>
+                            </tr>
+
+                            <!-- Row 4 -->
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">4</td>
+                                <td class="px-6 py-4 text-sm text-gray-500">Rendemen</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">20</td>
+                                <td class="px-4 py-3 whitespace-nowrap">
+                                    <div class="min-w-[150px] w-full">
+                                        <select
+                                            class="score-select block w-full pl-3 pr-10 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            data-weight="20">
+                                            <option value="0" selected disabled>Pilih Skor</option>
+                                            <option value="1">1 (Buruk)</option>
+                                            <option value="2">2 (Sangat Kurang)</option>
+                                            <option value="3">3 (Kurang)</option>
+                                            <option value="5">5 (Cukup)</option>
+                                            <option value="6">6 (Baik)</option>
+                                            <option value="7">7 (Sangat Baik)</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 score-value">0</td>
+                            </tr>
+
+                            <!-- Row 5 -->
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5</td>
+                                <td class="px-6 py-4 text-sm text-gray-500">Sanitasi dan higienitas</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">15</td>
+                                <td class="px-4 py-3 whitespace-nowrap">
+                                    <div class="min-w-[150px] w-full">
+                                        <select
+                                            class="score-select block w-full pl-3 pr-10 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            data-weight="15">
+                                            <option value="0" selected disabled>Pilih Skor</option>
+                                            <option value="1">1 (Buruk)</option>
+                                            <option value="2">2 (Sangat Kurang)</option>
+                                            <option value="3">3 (Kurang)</option>
+                                            <option value="5">5 (Cukup)</option>
+                                            <option value="6">6 (Baik)</option>
+                                            <option value="7">7 (Sangat Baik)</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 score-value">0</td>
+                            </tr>
+
+                            <!-- Row 6 -->
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6</td>
+                                <td class="px-6 py-4 text-sm text-gray-500">Penyajian/penampilan</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">15</td>
+                                <td class="px-4 py-3 whitespace-nowrap">
+                                    <div class="min-w-[150px] w-full">
+                                        <select
+                                            class="score-select block w-full pl-3 pr-10 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            data-weight="15">
+                                            <option value="0" selected disabled>Pilih Skor</option>
+                                            <option value="1">1 (Buruk)</option>
+                                            <option value="2">2 (Sangat Kurang)</option>
+                                            <option value="3">3 (Kurang)</option>
+                                            <option value="5">5 (Cukup)</option>
+                                            <option value="6">6 (Baik)</option>
+                                            <option value="7">7 (Sangat Baik)</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 score-value">0</td>
+                            </tr>
+
+                            <!-- Total Row -->
+                            <tr class="bg-gray-100">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Jumlah Total
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">100</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 total-score">0
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 total-value">0
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-info-circle text-blue-400"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-blue-700">
+                                    <strong>Keterangan:</strong><br>
+                                    Skor : 1, 2, 3, 5, 6, 7 (1 = buruk, 2 = sangat kurang, 3 = kurang, 5 = cukup, 6 =
+                                    baik, 7 = sangat baik)<br>
+                                    Nilai = bobot × skor
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Komentar Penilai:</label>
+                        <textarea rows="3"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="Masukkan komentar penilai"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nama Kota</label>
+                            <input type="text"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Nama kota">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal</label>
+                            <input type="text"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                value="2025" readonly>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Dewan Juri</label>
+                            <input type="text"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Nama juri">
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex justify-end space-x-4">
+                        <button type="button"
+                            class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                            Reset Form
+                        </button>
+                        <button type="button"
+                            class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                            Simpan Penilaian
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Alpine JS for interactivity -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="../../js/fillet-ikan.js"></script>
+    <script src="../../js/admin.js" type="module"></script>
+</body>
+
+</html>
